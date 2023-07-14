@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+   {{> header   }}
+  <body>
+     {{> navbar   }}
+
+            <style>
+                /* Custom style para o Accordion*/
+                .accordion-button::after {
+                    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+                    transform: scale(.7) !important;
+                }
+
+                .accordion-button:not(.collapsed)::after {
+                    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+                }
+
+                .accordion-button {
+                    color: rgb(0,70,148);
+                    font-weight: bold;
+                }
+
+                /* END of Custom style para o Accordion*/
+            </style>
+                
+           
+  </nav>
+  <!--Menu Principal-->
+  <nav class="navbar navbar-expand-lg py-0 sticky-top" style="background-color: rgb(0,70,148);">
+    <div class="container">
+      <div class="collapse navbar-collapse navMenu">
+        <ul class="navbar-nav nav-tabs border-0">
+          <li class="dropdown">
+            <a class="nav-link h5 dropdown-toggle" style="color:#ffffff" href="/pp" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pages-dropdown">Prestações
+              Pecuniárias</a>
+            <div class="dropdown-menu dropdown-menu-wide p-0 o-hidden" aria-labelledby="pages-dropdown">
+              <div class="list-group list-group-flush">
+                <a href="/pp_mat_pat"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Maternidade e Paternidade</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_ado"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Adoção</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_ecj"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Encargos com Crienças e Jovens</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_did"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Doença, Invalidez e Dependência</span>
+
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_dcs"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+
+                    <div>
+                      <span class="h6 d-block mb-0">Desemprego e Carência Socioeconómica</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_rv"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Reforma e Velhice</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_mrt"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Morte</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_cp"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Complementos de Pensões</span>
+
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+              </div>
+
+            </div>
+          </li>
+
+          <li class="dropdown">
+            <a class="nav-link h5 dropdown-toggle" style="color:#ffffff" href="/asp" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pages-dropdown">Apoios Sociais e
+              Programas</a>
+            <div class="dropdown-menu dropdown-menu-wide p-0 o-hidden" aria-labelledby="pages-dropdown">
+              <div class="list-group list-group-flush">
+                <a href="/asp_cj"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Crianças e Jovens</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_ido"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Idosos</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_sa"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Sem Abrigo</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_vvd"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Vítimas de Violência Doméstica</span>
+
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_fc"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+
+                    <div>
+                      <span class="h6 d-block mb-0">Família / Comunidade</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_sd"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+
+                    <div>
+                      <span class="h6 d-block mb-0">Saúde</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+              </div>
+
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link h5" style="color:#ffffff" href="/cu">Contactos Úteis</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--FIM Menu Principal-->
+
+  <!--INÍCIO das Imagens em Carrocel-->
+  <section class="controls-inside p-0 controls-light bg-dark"
+    data-flickity="{ &quot;cellAlign&quot;: &quot;left&quot;, &quot;contain&quot;: true, &quot;imagesLoaded&quot;: true, &quot;wrapAround&quot;: true }">
+    <div class="height-70 carousel-cell py-3 py-md-4 height-40 overlay-dark">
+      <img class="bg-image opacity-50" src="img/design/slider-bg.jpg" alt="Build beautiful, modular websites.">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="display-4 text-white">Recursos Sociais no Apoio a Vítimas de Crime</h1>
+            <a href="/pp" class="btn btn-primary btn-lg">Prestações Pecuniárias</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="height-70 carousel-cell py-3 py-md-4 height-40 overlay-dark">
+      <img class="bg-image opacity-50" src="img/design/slider-bg_1.jpg" alt="Build beautiful, modular websites.">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="display-4 text-white">Recursos Sociais no Apoio a Vítimas de Crime</h1>
+            <a href="/asp" class="btn btn-primary btn-lg">Apoios Sociais e Programas</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="height-70 carousel-cell py-3 py-md-4 height-40 overlay-dark">
+      <img class="bg-image opacity-50" src="img/design/slider-bg_2.jpg" alt="Build beautiful, modular websites.">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="display-4 text-white">Recursos Sociais no Apoio a Vítimas de Crime</h1>
+            <a href="/cu" class="btn btn-primary btn-lg">Contactos Úteis</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!--FIM das Imagens em Carrocel-->
+
+  <section>
+      <div class="position-absolute bottom-0 start-50 translate-middle-x pb-3">
+          <h2>Doença, Invalidez e Dependência</h2><br>
+      </div>
+    
+  </section>
+
+  <!--INICIO Menu Accordion-->
+  <section class="pt-md-3 ">
+      <div class="m-4">
+          <div class="accordion" id="myAccordion">
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseOne">
+                          Subsídio de Doença
+                      </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>Prestação atribuída ao beneficiário para compensar a perda de remuneração resultante do impedimento temporário para o trabalho, por motivo de doença.</p>
+                          <p>Considera-se doença, toda a situação mórbida, evolutiva, não decorrente de causa profissional ou de ato da responsabilidade de terceiro pelo qual seja devida indemnização, que determine incapacidade para o trabalho.</p>
+                          <br>
+                          <h6>Condições de atribuição</h6>
+                          <ul>
+                              <li>Estar em situação de incapacidade temporária para o trabalho certificada pelo médico do serviço de saúde competente;</li>
+                              <li>Ter 6 meses civis, seguidos ou interpolados, com registo de remunerações, à data do início da doença, considerando-se, se necessário, o mês em que ocorre a doença, se neste tiver havido registo de remunerações (prazo de garantia).</li>
+                          </ul>
+                          <br />
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>O subsídio é<strong> acumulável</strong> com:</p>
+                          <ul>
+                              <li>Prestações compensatórias dos subsídios de férias e de natal;</li>
+                              <li>Rendimento social de inserção;</li>
+                              <li>Indemnizações por incapacidade temporária resultantes de doença profissional e de acidente de trabalho, desde que o valor das indemnizações seja inferior ao valor do subsídio de doença;</li>
+                              <li>Pensões concedidas no âmbito da proteção por acidente de trabalho, doença profissional e outras reconhecidas como indemnizatórias.</li>
+                          </ul>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>Uma vez que a informação relativa à situação de doença é enviada eletronicamente pelos serviços de saúde para os serviços de Segurança Social, o beneficiário não tem que apresentar nenhum documento. A partir dos dados recebidos os serviços de Segurança Social verificam as condições de atribuição do subsídio e procedem ao seu pagamento, se for o caso.</p>
+                          <p>Se a certificação da doença for feita manualmente pelo médico, os serviços de saúde entregam ao beneficiário o original do CIT, o qual deve ser enviado pelo beneficiário, no <strong>prazo de 5 dias</strong> úteis a contar da data do início da sua emissão, ao serviço de Segurança Social da sua área de residência.</p>
+                          <p>Em ambas as situações os serviços de saúde entregam ao beneficiário uma cópia autenticada do CIT, para que o mesmo o entregue à sua entidade empregadora, para justificação da sua incapacidade para o trabalho. Caso o beneficiário pretenda ficar com o comprovativo para si deve solicitar uma cópia do CIT ao serviço de saúde.</p>
+                          <br>
+                          <p><a href="https://www.seg-social.pt/subsidio-de-doenca" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseTwo">
+                          Pensão de Invalidez
+                      </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>É um valor pago mensalmente, destinado a proteger os beneficiários do regime geral de Segurança Social nas situações de incapacidade permanente para o trabalho.</p>
+                          <p>
+                              Considera-se invalidez toda a situação incapacitante, de causa não profissional, que determine incapacidade permanente para o trabalho.
+
+                          </p>
+                          <br>
+                          <h6>Condições de atribuição</h6>
+                          <p>O direito à pensão de invalidez é reconhecido ao beneficiário que tenha:</p>
+                          <ul>
+                              <li>Incapacidade permanente, relativa ou absoluta, para o trabalho, de causa não profissional, certificada pelo Sistema de Verificação de Incapacidades (SVI);</li>
+                              <li>Cumprido o respetivo prazo de garantia.</li>
+                              <li><strong>Incapacidade permanente</strong></li>
+                              <ul>
+                                  <li>A incapacidade permanente para o trabalho pode ser considerada de 2 tipos:</li>
+                                  <ul>
+                                      <li><strong>​​​​​​​Invalidez relativa</strong> – situação em que o beneficiário não possa obter da sua profissão mais de um terço da remuneração correspondente ao seu exercício normal e seja de presumir que não recupere, nos 3 anos seguintes, a capacidade de obter, da sua última profissão (abrangida pelo regime geral) mais de 50% da respetiva remuneração;</li>
+                                      <li><strong>Invalidez absoluta</strong> - situação de incapacidade permanente e definitiva para toda e qualquer profissão ou trabalho em que o beneficiário não apresente capacidades de ganho remanescentes, nem se presuma que venha a recuperar, até à idade legal de acesso à pensão de velhice, a capacidade de obter quaisquer meios de subsistência.</li>
+                                  </ul>
+                              </ul>
+
+                          </ul>
+                          <p>Se à data do requerimento da pensão o beneficiário exercer, ao mesmo tempo, mais do que uma profissão abrangida pelo regime geral, a redução da incapacidade de ganho prevista refere-se à profissão com remuneração mais elevada.</p>
+                          <br />
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>O subsídio é <strong>acumulável</strong> com:</p>
+                          <ul>
+                              <li>Complemento de pensão por cônjuge a cargo (se estiver na situação de pensionista antes de 1/janeiro/1994 e o cônjuge estiver a seu cargo);</li>
+                              <li>Complemento por dependência;</li>
+                              <li>Pensão de sobrevivência;</li>
+                              <li>Pensões de outros regimes obrigatórios nacionais e estrangeiros ou de regimes facultativos.</li>
+                          </ul>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>
+                              ​​​​​​​O subsídio pode ser requerido através:
+                          </p>
+                          <ul>
+                              <li>Do Serviço Segurança Social Direta e/ou nos serviços de atendimento da Segurança Social e Lojas do Cidadão;</li>
+                              <li>Da apresentação do formulário: <a href="docs/pp/RP_5072_DGSS.pdf" target="_blank">Requerimento</a>, acompanhado dos documentos nele indicados.</li>
+                          </ul>
+                          <br>
+                          <p><a href="https://www.seg-social.pt/pensao-de-invalidez" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseThree">
+                          Subsídio por Assistência a Filho
+                      </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>É um apoio em dinheiro dado às pessoas que têm que faltar ao trabalho para prestar assistência urgente e necessária aos filhos (biológicos, adotados ou do seu cônjuge), em caso de doença ou acidente. Aplica-se a filhos menores ou maiores. Sendo maiores têm que fazer parte do agregado familiar do beneficiário. Aplica-se também aos filhos que, independentemente da idade, sejam deficientes ou doentes crónicos.</p>
+                          <br>
+                          <h6>Condições de atribuição</h6>
+                          <p>Para ter direito ao subsídio para assistência a filhos, no dia em que inicia o gozo das faltas tem de ter trabalhado e descontado durante <strong>seis meses</strong> (seguidos ou não) para a Segurança Social ou outro sistema de proteção social, nacional ou estrangeiro desde que não se sobreponham.</p>
+                          <p>Para completar este prazo de 6 meses é contado, se for necessário, o mês em que inicia a licença desde que tenha trabalhado e descontado pelo menos um dia nesse mesmo mês. nacional ou estrangeiro desde que não se sobreponham.</p>
+                          <p>Os Trabalhadores Independentes (a recibos verdes ou empresários em nome individual) e os beneficiários do seguro social voluntário devem ter a situação contributiva regularizada até ao fim do terceiro mês imediatamente anterior ao mês em que deixam de trabalhar para assistência a filho.</p>
+                          <p>A situação contributiva irregular determina a suspensão do pagamento do subsídio para assistência a filho a partir da data em que o mesmo é devido. Porém, o beneficiário readquire o direito ao subsídio desde que regularize a situação contributiva nos 3 meses subsequentes ao mês em que tenha ocorrido a suspensão.</p>
+                          <p>Se a situação contributiva não for regularizada no referido prazo, o beneficiário perde o direito às prestações suspensas. Caso regularize a situação contributiva fora do prazo, mas dentro do período de concessão do subsídio, retoma o direito ao subsídio a partir do dia seguinte àquele em que ocorra a regularização da situação contributiva.</p>
+                          <br />
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>O subsídio é <strong>acumulável </strong>com:</p>
+
+                          <ul>
+                              <li>Rendimento Social de Inserção;</li>
+                              <li>Pensão de Sobrevivência (desde que esteja a trabalhar e a descontar para a Segurança Social);</li>
+                              <li>Pensões ou indemnizações por acidente de trabalho ou doença profissional;</li>
+                              <li>Pensão de Invalidez Relativa (desde que esteja a trabalhar e a descontar para a Segurança Social);</li>
+                              <li>Pensão de Velhice (desde que esteja a trabalhar e a descontar para a Segurança Social);</li>
+                              <li>Complemento Solidário para Idosos;</li>
+                              <li>Pré-reforma com suspensão do contrato de trabalho, desde que também se verifique exercício de atividade com descontos para a Segurança Social.</li>
+                          </ul>
+                          <p><strong>Não pode acumular</strong> com:</p>
+                          <ul>
+                              <li>Prestações de desemprego (Subsídio de Desemprego Subsídio Social de Desemprego subsídio por cessação de atividade para Trabalhadores Independentes economicamente dependentes, subsídio por cessação de atividade para empresários e para Membros dos Órgãos Estatutários das Pessoas Coletivas;</li>
+                              <li>Subsídio de Doença;</li>
+                              <li>Prestações concedidas no âmbito do Subsistema de Solidariedade exceto Rendimento Social de Inserção e Complemento Social para Idosos.</li>
+                          </ul>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>O subsídio pode ser requerido através:</p>
+                          <ul>
+                              <li>Do Serviço Segurança Social Direta e/ou nos serviços de atendimento da Segurança Social;</li>
+                              <li>Por correio, para o Centro Distrital da área da residência do beneficiário.</li>
+                          </ul>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>No prazo de 6 meses a contar do dia em que faltou ao trabalho para prestar assistência ao filho.</p>
+                          <br>
+                          <p><a href="https://www.seg-social.pt/subsidio-para-assistencia-a-filho" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseFour">
+                          Subsídio por Assistência a Neto
+                      </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>Prestação em dinheiro atribuída aos avós ou equiparados pelo nascimento de neto que viva com os mesmos em comunhão de mesa e habitação e seja filho de adolescente menor de 16 anos, durante um período até 30 dias seguidos (após o nascimento), a gozar de modo exclusivo ou partilhado.</p>
+                          <p>Na situação de não partilha de licença pelos avós, o subsídio é atribuído se o outro avô trabalhar, não puder prestar assistência ao neto e não pedir o subsídio pelo mesmo motivo.</p>
+                          <br>
+                          <h6>Condições de atribuição</h6>
+                          <p>O beneficiário, à data do impedimento, deve ter:</p>
+                          <ul>
+                              <li>Prazo de garantia de 6 meses civis com registo de remunerações. Consideram-se os períodos de registo de remunerações noutros regimes de proteção social, nacionais ou estrangeiros, que abranjam esta modalidade de proteção, incluindo o da função pública;</li>
+                              <li>A situação contributiva regularizada perante a Segurança Social, na data em que é reconhecido o direito à prestação - se estiver abrangido pelo regime do seguro social voluntário.</li>
+                          </ul>
+                          <br>
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>O subsídio é <strong>acumulável</strong> com:</p>
+                          <ul>
+                              <li>Indemnizações e pensões por doença profissional e/ou por acidente de trabalho;</li>
+                              <li>Pensão de velhice, invalidez relativa e sobrevivência concedidas no âmbito do sistema previdencial ou de outros regimes obrigatórios de proteção social;</li>
+                              <li>Pré-reforma (desde que exerça atividade enquadrada em qualquer dos regimes de trabalhadores por conta de outrem ou seguro social voluntário desde que, neste último caso, o respetivo esquema de proteção social integre a eventualidade);</li>
+                              <li>Rendimento social de inserção;</li>
+                              <li>Complemento solidário para idosos;</li>
+                              <li>Subsídio de apoio ao cuidador informal principal.</li>
+                          </ul>
+                          <p><strong>Não pode acumular </strong>com:</p>
+                          <ul>
+                              <li>Rendimentos de trabalho;</li>
+                              <li>Subsídio de desemprego;</li>
+                              <li>Subsídio de Doença;</li>
+                              <li>Prestações concedidas no âmbito do Subsistema de Solidariedade exceto Rendimento Social de Inserção e Complemento Social para Idosos;</li>
+                              <li>Prestações emergentes do mesmo facto desde que respeitantes ao mesmo interesse protegido, ainda que atribuídas por outros regimes de proteção social.</li>
+                          </ul>
+                          <br>
+                          <h6>Como requerer</h6>
+                          <p>O subsídio pode ser requerido através:</p>
+                          <ul>
+                              <li>do serviço Segurança Social Direta;</li>
+                              <li>Da apresentação do formulário: <a href="docs/pp/RP_5054.pdf" target="_blank">Requerimento</a>, acompanhado dos documentos nele indicados, a apresentar:</li>
+                              <ul>
+                                  <li>nos serviços de atendimento da Segurança Social;</li>
+                                  <li>nas Lojas do Cidadão.</li>
+                              </ul>
+                          </ul>
+                          <br />
+                          <h6>Prazo para requerer</h6>
+                          <p>No prazo de 6 meses a contar da data do facto que determina a proteção.</p>
+                          <p>Se o subsídio for requerido on-line, no serviço Segurança Social Direta, os meios de prova podem ser enviados pela mesma via desde que corretamente digitalizados.</p>
+                          <p>Os originais dos meios de prova devem ser guardados durante 5 anos e apresentados sempre que sejam solicitados pelos serviços competentes.</p>
+                          <br>
+                          <p><a href="https://www.seg-social.pt/subsidio-para-assistencia-a-neto1" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseFive">
+                          Proteção Especial por Invalidez
+                      </button>
+                  </h2>
+                  <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>Proteção especial na invalidez destinada a proteger o beneficiário em situação de incapacidade permanente para o trabalho com prognóstico de evolução rápida para uma situação de perda de autonomia com impacto negativo para a profissão, originada por:</p>
+
+                          <ul>
+                              <li>paramiloidose familiar;</li>
+                              <li>doença de Machado Joseph;</li>
+                              <li>SIDA - vírus da imunodeficiência humana (VIH);</li>
+                              <li>esclerose múltipla;</li>
+                              <li>doença do foro oncológico;</li>
+                              <li>esclerose lateral amiotrófica;</li>
+                              <li>doença de Parkinson;</li>
+                              <li>doença de Alzheimer;</li>
+                              <li>doenças raras;</li>
+                              <li>outras doenças de causa não profissional ou de responsabilidade de terceiro, de aparecimento súbito ou precoce que evoluam rapidamente para uma situação de perda de autonomia com impacto negativo na profissão.</li>
+                              <li></li>
+                              <li></li>
+                          </ul>
+                          <p>A proteção especial é assegurada através das seguintes prestações pecuniárias:</p>
+                          <ul>
+                              <li>Pensão de invalidez especial;</li>
+                              <li>Pensão social de invalidez especial;</li>
+                              <li>Complemento por dependência.</li>
+                          </ul>
+                          <br />
+                          <h6>Condições de atribuição</h6>
+                          <p>O direito às prestações, depende, de entre outras condições específicas, da certificação da situação de invalidez especial e/ou de dependência pelo Sistema de Verificação de Incapacidades (SVI).</p>
+                          <p><strong>Pensão de invalidez </strong>- Ter prazo de garantia de:</p>
+                          <ul>
+                              <li>3 anos civis, seguidos ou interpolados, com registo de remunerações;</li>
+                              <li>"36 meses com registo de remunerações - beneficiários abrangidos pelo seguro social voluntário.</li>
+                          </ul>
+                          <p><strong>Pensão social de invalidez especial</strong></p>
+                          <ul>
+                              <li>Ter idade superior a 18 anos;</li>
+                              <li>Não estar abrangido por qualquer regime de proteção social obrigatório ou pelos transitórios dos rurais ou, estando, não ter os períodos de garantia exigidos para acesso à pensão de invalidez;</li>
+                              <li>Ser pensionista de invalidez ou de sobrevivência com pensão de valor inferior ao da pensão social;</li>
+                              <li>Ter rendimentos mensais ilíquidos iguais ou inferiores a 177,28 € se for pessoa isolada, ou a 265,92 € se for casal (corresponde a 40% e 60% do indexante dos apoios sociais (IAS), respetivamente – condição de recursos.</li>
+                          </ul>
+                          <p><strong>Nota: </strong>valor do IAS = 443,20€.</p>
+                          <p>São considerados rendimentos os valores recebidos correspondentes a bolsas ou subsídios por frequência de ações de formação profissional.</p>
+                          <br />
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>O subsídio é<strong> acumulável</strong> com:</p>
+                          <ul>
+                              <li>Rendimentos de trabalho, auferidos no país ou no estrangeiro, no caso de invalidez relativa, se resultarem:</li>
+                              <ul>
+                                  <li>da mesma profissão exercida à data do início da pensão de invalidez - acumulação até 100% da remuneração de referência (RR) que serviu de base ao cálculo para a pensão.</li>
+                              </ul>
+                              <li>Complemento de pensão por cônjuge a cargo (se estiver na situação de pensionista antes de 1/janeiro/1994 e o cônjuge estiver a seu cargo);</li>
+                              <li>Complemento por dependência;</li>
+                              <li>Pensão de sobrevivência;</li>
+                              <li>Pensões de outros regimes obrigatórios nacionais e estrangeiros ou de regimes facultativos.</li>
+
+                          </ul>
+                          <p><strong>Não pode acumular </strong>com:</p>
+                          <ul>
+                              <li>Prestações de doença;</li>
+                              <li>Prestações de desemprego;</li>
+                              <li>Rendimentos de trabalho, no caso de pensão de invalidez absoluta.</li>
+                          </ul>
+
+
+                          <br>
+                          <p><a href="https://www.seg-social.pt/protecao-especial-na-invalidez" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseSix">
+                          Subsídio para Assistência a Terceira Pessoa
+                      </button>
+                  </h2>
+                  <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>É uma prestação mensal em dinheiro que se destina a compensar as famílias com descendentes, a receber abono de família com bonificação por deficiência, que estejam em situação de dependência e que necessitem do acompanhamento permanente de 3.ª pessoa.</p>
+                          <br>
+                          <h6>
+                              Condições de Atribuição
+                          </h6>
+                          <p><strong>Regime contributivo</strong></p>
+                          <p><strong>Beneficiário que tem a seu cargo a criança ou adulto com deficiência</strong></p>
+                          <ul>
+                              <li>Ter registo de remunerações (contribuições pagas) nos primeiros 12 meses dos últimos 14 a contar da data de entrega do requerimento (prazo de garantia).</li>
+                          </ul>
+                          <p>Esta condição nõ se aplica aos:</p>
+                          <ul>
+                              <li>pensionistas</li>
+                              <li>pensionistas por riscos profissionais com incapacidade permanente, igual ou superior a 50%.</li>
+                          </ul>
+                          <p><strong>Pessoa com deficiência</strong></p>
+                          <ul>
+                              <li>Ser titular do abono de família para crianças e jovens com bonificação por deficiência;</li>
+                              <li>Estar em situação de dependência.</li>
+                          </ul>
+                          <p><strong>Encontra-se em situação de dependência se, devido exclusivamente à sua deficiência:</strong></p>
+                          <ul>
+                              <li>não praticar com autonomia as necessidades básicas da vida quotidiana (relativos à alimentação, locomoção e cuidados de higiene pessoal);</li>
+                              <li>necessitar de assistência permanente de outra pessoa durante pelo menos 6 horas diárias;</li>
+                              <li>Não exercer atividade profissional abrangida por regime de proteção social obrigatório;</li>
+                              <li>Viver a cargo do beneficiário.</li>
+                          </ul>
+                          <p>A assistência pode ser prestada por qualquer pessoa e por mais do que uma pessoa, incluindo a que é prestada no âmbito do apoio domiciliário.</p>
+                          <p>A certificação da situação de dependência é efetuada pelo Serviço de Verificação de Incapacidades (SVI) do Centro Distrital do Instituto da Segurança Social, I.P. que abrange a área de residência do descendente.</p>
+                          <p>Consideram-se a cargo do beneficiário os seguintes familiares, que com ele vivam em comunhão de mesa e habitação:</p>
+                          <ul>
+                              <li>descendentes solteiros</li>
+                              <li>descendentes casados, com rendimentos mensais inferiores a 448,48 € (2 x o valor da pensão social)</li>
+                              <li>descendentes separados de pessoas e bens, divorciados ou viúvos, com rendimentos inferiores a 224,24 € (Valor da pensão social = 224,24 €).</li>
+                          </ul>
+                          <p>Para ter direito ao subsídio é necessário que:</p>
+                          <ul>
+                              <li>A pessoa em situação de dependência por si ou pelo seu agregado familiar apresente <strong>uma</strong> das seguintes <strong>condições de recurso</strong>:</li>
+                              <ul>
+                                  <li>endimentos ilíquidos mensais iguais ou inferiores a 192,17 € (corresponde a 40% do IAS), desde que o rendimento do respetivo agregado familiar não seja superior a 720,65 € (1,5 x IAS) ou</li>
+                                  <li>rendimento do agregado familiar, por pessoa, igual ou inferior a 144,13 € (30% do IAS) e estar em situação de risco ou disfunção social.   </li>
+                              </ul>
+                              <li>A pessoa em situação de dependência não exerça atividade profissional enquadrada por regime de proteção social obrigatório.</li>
+                          </ul>
+                          <p><strong>Nota: </strong>valor do IAS/2023 = 480,43 €</p>
+                          <p>O subsídio por assistência de 3ª pessoa <strong>não é atribuído</strong> se a assistência permanente for prestada em estabelecimentos de saúde ou de apoio social, oficial ou particular sem fins lucrativos, financiados pelo Estado ou por outras pessoas coletivas de direito público ou de direito privado e de utilidade pública.</p>
+                          <br />
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>O subsidio <strong>pode acumular</strong> com:</p>
+                          <ul>
+                              <li>Abono de família para crianças e jovens;</li>
+                              <li>Bonificação por deficiência;</li>
+                              <li>Rendimento social de inserção;</li>
+                              <li>Pensão de sobrevivência.</li>
+                          </ul>
+                          <p><strong>Não pode acumular</strong> com:</p>
+                          <ul>
+                              <li>Subsídio de educação especial;</li>
+                              <li>Prestação social para a inclusão;</li>
+                              <li>Pensão social de velhice;</li>
+                              <li>Subsídio de apoio ao cuidador informal principal.</li>
+                          </ul>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>O requerimento do subsídio por assistência de 3.ª pessoa deve ser:</p>
+                          <ul>
+                              <li>apresentado nos serviços de atendimento da Segurança Social, através do <a href="docs/pp/RP_5036_DGSS.pdf" target="_blank">Formulário</a>, acompanhado dos documentos nele indicados.</li>
+                          </ul>
+                          <br />
+                          <h6>Prazo para recorrer</h6>
+                          <p>6 meses a partir do mês seguinte àquele em que ocorreu o facto determinante da sua atribuição.</p>
+                          <p>Após aquele prazo, será pago, apenas, a partir do mês seguinte ao da apresentação do requerimento.</p>
+                          <br>
+                          <p><a href="https://www.seg-social.pt/subsidio-por-assistencia-de-3-pessoa" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSeven">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseSeven">
+                          Complemento por Dependência
+                      </button>
+                  </h2>
+                  <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>É uma prestação em dinheiro atribuída aos cidadãos a seguir indicados que se encontrem em situação de dependência e que precisam da ajuda de outra pessoa para satisfazer as necessidades básicas da vida quotidiana:</p>
+                          <br>
+                          <ul>
+                              <li>Pensionistas de invalidez, velhice e sobrevivência do regime geral de segurança social e do regime do seguro social voluntário;</li>
+                              <li>Pensionistas de velhice e de sobrevivência do regime não contributivo e equiparados;</li>
+                              <li>Beneficiários da prestação social para a inclusão;</li>
+                              <li>Beneficiários não pensionistas dos regimes acima referidos que sejam portadores de doença suscetível de originar invalidez especial.</li>
+                          </ul>
+                          <br>
+                          <p><a href="https://www.seg-social.pt/protecao-especial-na-invalidez" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                          <br />
+                          <h6>Condições de Atribuição</h6>
+                          <p>Necessitar da assistência de outra pessoa para satisfazer as necessidades básicas da vida quotidiana, nomeadamente:</p>
+                          <ul>
+                              <li>Realização dos serviços domésticos</li>
+                              <li>Apoio na alimentação</li>
+                              <li>Apoio à locomoção</li>
+                              <li>Apoio nos cuidados de higiene.</li>
+                          </ul>
+                          <p>A situação de dependência é certificada pelo Sistema de Verificação de Incapacidades da Segurança Social e graduada em:</p>
+                          <ul>
+                              <li><strong>1.º Grau </strong>– pessoas que não possam praticar, com autonomia, os atos indispensáveis à satisfação de necessidades básicas da vida quotidiana (atos relativos à alimentação ou locomoção ou cuidados de higiene pessoal).</li>
+                              <li><strong>2.º Grau </strong>– pessoas que acumulem as situações de dependência que caracterizam o 1.º grau e se encontrem acamadas ou apresentem quadros de demência grave.</li>
+                          </ul>
+                          <p>A assistência às pessoas em situação de dependência pode ser assegurada através:</p>
+                          <ul>
+                              <li>
+                                  Da participação, sucessiva e conjugada, de várias pessoas, incluindo a prestada no âmbito de apoio domiciliário ou de outros serviços de ajuda a pessoas em situação de dependência, tais como os serviços de tele alarme.
+                                  <br />As pessoas que prestam assistência, incluindo os familiares do titular da prestação, têm que ser autónomas para a realização dos atos básicos da vida diária.
+                              </li>
+                              <li>De estabelecimento de apoio social, oficial ou particular com ou sem fins lucrativos.</li>
+                          </ul>
+                          <br />
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>O complemento <strong>não pode acumular</strong> com:</p>
+                          <ul>
+                              <li>Rendimentos do trabalho</li>
+                              <li>Outra prestação para o mesmo fim</li>
+                              <li>Subsídio de apoio ao cuidador informal principal.</li>
+                          </ul>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>Através do <a href="docs/pp/RP_5027.pdf" target="_blank">formulário</a> o qual deve ser apresentado, com os documentos nele indicados:</p>
+                          <ul>
+                              <li>Nos serviços de atendimento da Segurança Social;</li>
+                              <li>
+                                  Nas instituições previstas nos instrumentos internacionais aplicáveis e, na sua falta, nos serviços da instituição gestora da pensão a que o mesmo tenha direito, no caso de beneficiário residente no estrangeiro.
+                              </li>
+                          </ul>
+                          <br>
+                          <p><a href="https://www.seg-social.pt/subsidio-por-assistencia-de-3-pessoa" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingEight">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseEight">
+                          Bonificação do Abono de Família para Crianças e Jovens com Deficiência
+                      </button>
+                  </h2>
+                  <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>A bonificação por deficiência é um acréscimo ao abono de família para crianças e jovens que é atribuído quando por motivo de perda ou anomalia congénita ou adquirida, de estrutura ou função psicológica, intelectual, fisiológica ou anatómica, a criança ou jovem necessite de apoio pedagógico ou terapêutico.</p>
+                          <br>
+                          <h6>Condições de Atribuição</h6>
+                          <p>Têm direito à bonificação as crianças com idade até aos 10 anos que requeiram a bonificação por deficiência, que:</p>
+                          <ul>
+                              <li>Necessitem de apoio individualizado pedagógico ou terapêutico específico, adequado à natureza e características da deficiência, como meio de impedir o seu agravamento, anular ou atenuar os seus efeitos e permitir a sua plena integração social</li>
+                              <li>Frequentem, estejam internadas ou em condições de frequência ou de internamento em estabelecimento especializado de reabilitação.</li>
+                          </ul>
+                          <br>
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>A bonificação pode acumular com:</p>
+                          <ul>
+                              <li>Abono de família para crianças e jovens. Para este efeito considera-se, também, o descendente que não recebe o abono de família por ter ficado enquadrado no 4.º escalão de rendimentos e tenha idade superior a 72 meses ou no 5.º escalão de rendimentos</li>
+                              <li>Abono de família pré-natal</li>
+                              <li>Subsídio por assistência de 3.ª pessoa</li>
+                              <li>Subsídio de educação especial</li>
+                              <li>Rendimento social de inserção</li>
+                              <li>Pensão de sobrevivência</li>
+                              <li>Pensão de orfandade</li>
+                              <li>Subsídio de apoio ao cuidador informal principal.</li>
+                          </ul>
+                          <p><strong>Não pode acumular </strong>com:</p>
+                          <ul>
+                              <li>Prestação social para a inclusão.</li>
+                          </ul>
+                          <br>
+                          <h6>Como requerer</h6>
+                          <p>
+                              Através de <a href="docs/pp/RP_5034.pdf" target="_blank"> apresentado</a> nos serviços da segurança conjuntamente com o <a href="docs/pp/RP_5045_DGSS.pdf" target="_blank">Requerimento de abono de família para crianças e jovens</a>, se já existir a situação de deficiência. <br>
+                              <br />
+                              <h6>Prazo para requerer</h6>
+                          <p>​​​​​​​O requerimento deve ser apresentado no prazo de 6 meses a contar do mês seguinte àquele em que se verificou a deficiência.</p>
+                          <p>No caso de requerer após aquele prazo, a prestação será paga, apenas, a partir do mês seguinte ao da apresentação do requerimento.</p>
+                          <br>
+                          <p><a href="https://www.seg-social.pt/bonificacao-do-abono-de-familia-para-criancas-e-jovens-com-deficiencia" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingNine">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseNine">
+                          Subsídio por Frequência de Estabelecimento de Educação Especial
+                      </button>
+                  </h2>
+                  <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>É uma prestação pecuniária paga mensalmente que se destina a assegurar a compensação de encargos resultantes da aplicação de formas específicas de apoio a crianças e jovens com deficiência, designadamente a frequência de estabelecimentos adequados.</p>
+                          <br>
+                          <h6>Condições de Atribuição</h6>
+                          <p>Ter registo de remunerações nos primeiros 12 meses dos últimos 14 a contar da data de entrega do requerimento (prazo de garantia).</p>
+                          <p>Esta condição não se aplica aos:</p>
+                          <ul>
+                              <li>pensionistas</li>
+                              <li>pensionistas por riscos profissionais com incapacidade permanente, igual ou superior a 50%.</li>
+                          </ul>
+                          <br />
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>O subsídio <strong>pode acumular</strong> com:</p>
+                          <ul>
+                              <li>Abono de família para crianças e jovens</li>
+                              <li>Bonificação por deficiência</li>
+                              <li>Prestação social para a inclusão</li>
+                              <li>Pensão de sobrevivência ou de orfandade.</li>
+                          </ul>
+                          <p><strong>Não pode acumular</strong> com:</p>
+                          <ul>
+                              <li>ubsídio por assistência de 3.ª pessoa.</li>
+                          </ul>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>Através do <a href="docs/pp/RP_5020_DGSS.pdf" target="_blank">formulário</a>, apresentado nos serviços da Segurança Social:</p>
+                          <ul>
+                              <li>no mês anterior ao do início do ano letivo, no caso de frequência de estabelecimento ou</li>
+                              <li>no decurso do ano letivo, nos casos de posterior verificação da deficiência ou conhecimento da existência de vaga ou outra circunstância atendível</li>
+                              <li>acompanhado dos documentos nele indicados.</li>
+                          </ul>
+                          <p>Considera-se ano letivo o período fixado por determinação dos serviços competentes do Ministério da Educação, para o funcionamento do respetivo estabelecimento.</p>
+                          <br>
+                          <p><a href="https://www.seg-social.pt/subsidio-de-educacao-especial" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTen">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseTen">
+                          Subsídio por Frequência de Estabelecimento de Educação Especial
+                      </button>
+                  </h2>
+                  <div id="collapseTen" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>
+                              É uma prestação pecuniária paga mensalmente que se destina a assegurar a compensação de encargos resultantes da aplicação de formas específicas de apoio a crianças e jovens com deficiência, designadamente a frequência de estabelecimentos adequados./p><br>
+                              <h6>Condições de Atribuição</h6>
+                          <p>Ter registo de remunerações nos primeiros 12 meses dos últimos 14 a contar da data de entrega do requerimento (prazo de garantia).</p>
+                          <p>Esta condição não se aplica aos:</p>
+
+                          <ul>
+                              <li>pensionistas</li>
+                              <li>pensionistas por riscos profissionais com incapacidade permanente, igual ou superior a 50%.</li>
+                          </ul>
+                          <br>
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>O subsidio <strong>pode acumular</strong> com:</p>
+                          <ul>
+                              <li>Abono de família para crianças e jovens</li>
+                              <li>Bonificação por deficiência</li>
+                              <li>Prestação social para a inclusão</li>
+                              <li>Pensão de sobrevivência ou de orfandade.</li>
+                          </ul>
+                          <p><strong>Não pode acumular</strong> com:</p>
+                          <ul>
+                              <li>Subsídio por assistência de 3.ª pessoa.</li>
+                          </ul>
+                          <br>
+                          <h6>Como requerer</h6>
+                          <p>Através do <a href="docs/pp/RP_5020_DGSS.pdf" target="_blank">formulário</a>, apresentado nos serviços da Segurança Social:</p>
+                          <ul>
+                              <li>no mês anterior ao do início do ano letivo, no caso de frequência de estabelecimento ou</li>
+                              <li>no decurso do ano letivo, nos casos de posterior verificação da deficiência ou conhecimento da existência de vaga ou outra circunstância atendível</li>
+                              <li>acompanhado dos documentos nele indicados.</li>
+                          </ul>
+                          <p>Considera-se ano letivo o período fixado por determinação dos serviços competentes do Ministério da Educação, para o funcionamento do respetivo estabelecimento.</p>
+
+                          <br>
+                          <p><a href="https://www.seg-social.pt/subsidio-de-educacao-especial" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingEleven">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseEleven">
+                          Subsídio Mensal Vitalício
+                      </button>
+                  </h2>
+                  <div id="collapseEleven" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>É uma prestação em dinheiro paga mensalmente a pessoas com deficiência (física, orgânica, sensorial, motora ou mental) de idade superior a 24 anos, que não lhes permita trabalhar. Pode ser pago às pessoas que as tenham a cargo.</p>
+                          <br>
+                          <h6>Condições de Atribuição</h6>
+                          <p>A pessoa com deficiência tem direito ao Subsídio Mensal Vitalício se:</p>
+                          <ul>
+                              <li>A pessoa que a tem a seu cargo (o beneficiário) tiver descontos para a Segurança Social nos primeiros 12 meses dos últimos 14 meses, a contar da data em que é feito o pedido. Este requisito não é exigível em relação aos pensionistas.</li>
+                              <li> A pessoa com deficiência:</li>
+                              <ul>
+                                  <li>tiver mais de 24 anos;</li>
+                                  <li>estiver a cargo do beneficiário;</li>
+                                  <li>não exercer atividade profissional abrangida por regime de proteção social obrigatório (não tiver uma atividade que o obrigue a descontar para a Segurança Social ou outra entidade semelhante).</li>
+                              </ul>
+                          </ul>
+                          <h6>O que significa estar a cargo do beneficiário?</h6>
+                          <p>Viver com o beneficiário em comunhão de mesa e habitação.</p>
+                          <p>Se a pessoa com deficiência for casada, os seus rendimentos mensais têm de ser inferiores a 406,70€ (dobro da pensão social).</p>
+                          <p>Se for viúva, separada ou divorciada, os seus rendimentos mensais têm de ser inferiores a 203,35€ (valor da pensão social).</p>
+                          <br />
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>O subsídio <strong>pode acumular</strong> com:</p>
+                          <ul>
+                              <li>Subsídio por assistência de 3.ª Pessoa;</li>
+                              <li>Complemento extraordinário de solidariedade;</li>
+                              <li>Rendimento social de inserção;</li>
+                              <li>Pensão de sobrevivência.</li>
+                          </ul>
+                          <p><strong>Não pode acumular</strong> com:</p>
+                          <ul>
+                              <li>Abono de família para crianças e jovens;</li>
+                              <li>Bonificação por deficiência;</li>
+                              <li>Pensão social de invalidez;</li>
+                              <li>Pensão social de velhice.</li>
+                          </ul>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>Para requerer este apoio é necessário o preenchimento de um requerimento (Requerimento Subsidio Mensal Vitalício - Modelo RP 5036 – DGS), este formulário não está disponível no site da Segurança Social. É disponibilizado nos serviços de atendimento presencial da Segurança Social.</p>
+                          <p>É necessária também uma informação médica e o certificado passado pelo Serviço de Verificação de Incapacidades do Centro Distrital da área de residência do interessado.</p>
+                          <br />
+                          <h6>Prazo para requerer</h6>
+                          <p>No prazo de seis meses contados a partir do mês seguinte àquele em que fez os 24 anos ou reuniu todas as condições para receber o Subsídio Mensal Vitalício. Se pedir depois deste prazo, só terá direito ao subsídio a partir do mês seguinte ao da apresentação do pedido.</p>
+                          <br>
+                          <p><a href="docs/pp/4004_Subsídio_Mensal_Vitalicio.pdf" target="_blank" class="btn btn-primary">GUIA PRÁTICO (pdf)</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwelve">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseTwelve">
+                          Subsídio por Assistência a Filho com Deficiência ou Doença Crónica
+                      </button>
+                  </h2>
+                  <div id="collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>É um apoio em dinheiro dado às pessoas que tiram uma licença no seu trabalho para acompanharem os filhos (biológicos, adotados ou do seu cônjuge) devido a deficiência, doença crónica ou doença oncológica por período até 6 meses, prorrogável até ao limite de 4 anos.</p>
+                          <p>Nas situações de necessidade de prolongamento da assistência, confirmada por declaração de médico especialista, comprovativa dessa necessidade, a licença pode ser prorrogável até ao limite de seis anos. </p>
+                          <br>
+                          <h6>Condições de Atribuição</h6>
+                          <ul>
+                              <li>Apresentar certificação médica que comprova a necessidade da assistência e o outro progenitor trabalha e não pediu subsídio pela mesma razão, ou está impossibilitado de prestar a assistência;</li>
+                              <li>Pedir o subsídio dentro do prazo, ou seja, nos 6 meses a contar do dia em que deixou de trabalhar para acompanhar a criança;</li>
+                              <li>Cumprir o prazo de garantia.</li>
+                          </ul>
+                          <br />
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>O subsídio <strong>pode acumular </strong>com:</p>
+                          <ul>
+                              <li>Pensão de invalidez relativa (desde que esteja a trabalhar e a descontar para a Segurança Social);</li>
+                              <li>Pensão de velhice (desde que esteja a trabalhar e a descontar para a Segurança Social);</li>
+                              <li>Pensão de sobrevivência (desde que esteja a trabalhar e a descontar para a Segurança Social);</li>
+                              <li>Pensões ou indemnizações por acidente de trabalho ou doença profissional;</li>
+                              <li>Rendimento social de inserção;</li>
+                              <li>Complemento Solidário para Idosos;</li>
+                              <li>Pré-reforma (desde que exerçam atividade enquadrada em qualquer dos regimes de Segurança Social dos trabalhadores por conta de outrem, independentes ou seguro social voluntário e desde que, neste último caso, o respetivo esquema de proteção social integre a eventualidade).</li>
+                          </ul>
+                          <p><strong>Não pode acumular</strong> com:</p>
+                          <ul>
+                              <li>Subsídio de desemprego;</li>
+                              <li>Subsídio social de desemprego, inicial ou subsequente ao subsídio de desemprego;</li>
+                              <li>Subsídio por cessação de atividade para trabalhadores independentes economicamente dependentes ou com atividade empresarial;</li>
+                              <li>Subsídio por cessação de atividade para membros dos órgãos estatutários das pessoas coletivas (MOES);</li>
+                              <li>Subsídio de doença;</li>
+                              <li>Prestações concedidas no âmbito do subsistema de solidariedade, exceto rendimento social de inserção e complemento solidário para idosos• Prestações concedidas no âmbito do Subsistema de Solidariedade exceto Rendimento Social de Inserção e Complemento Social para Idosos.</li>
+                          </ul>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>O subsídio pode ser requerido através:</p>
+                          <ul>
+                              <li><a href="https://app.seg-social.pt/sso/login?service=https://app.seg-social.pt/ptss/caslogin" target="_blank">Serviço Segurança Social Direta</a></li>
+                              <li>Serviços de atendimento da Segurança Social;</li>
+                              <li>Por correio, para o Centro Distrital da área da residência do beneficiário.</li>
+                          </ul>
+                          <br />
+                          <h6>Prazo para requerer</h6>
+                          <p>No prazo de 6 meses a contar do primeiro dia em já não trabalhou. Se não pedir dentro deste prazo, mas entregar o requerimento durante o período legal de concessão do subsídio, o tempo que passou além dos seis meses será descontado na prestação.</p>
+
+                          <br>
+                          <p><a href="https://www.seg-social.pt/familia-e-comunidade" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThirteen">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseThirteen">
+                          Subsídio por riscos específicos
+                      </button>
+                  </h2>
+                  <div id="collapseThirteen" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>
+                              Subsídio atribuído à trabalhadora grávida, puérpera e lactante que na sua atividade profissional desempenhe trabalho noturno ou se encontre exposta a riscos específicos que prejudiquem a sua segurança e saúde, desde que o empregador não lhe possa distribuir outras tarefas.
+                          </p>
+                          <br>
+                          <h6>Condições de Atribuição</h6>
+                          <ul>
+                              <li>Ter prazo de garantia de 6 meses civis, seguidos ou interpolados, com registo de remunerações, à data do impedimento para o trabalho. Para a contagem dos 6 meses, consideram-se os períodos de registo de remunerações noutros regimes de proteção social, nacionais ou estrangeiros, desde que não se sobreponham, que abranjam esta modalidade de proteção, incluindo o da função pública;</li>
+                              <li>Gozar as respetivas licenças, faltas e dispensas não retribuídas nos termos do Código do Trabalho ou de períodos equivalentes;</li>
+                              <li>Ter a situação contributiva regularizada na data em que é reconhecido o direito à prestação, se for trabalhador independente ou se estiver abrangido pelo regime do seguro social voluntário.</li>
+                          </ul>
+                          <br />
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>O subsídio <strong>é acumulável </strong>com:</p>
+                          <ul>
+                              <li>Indemnizações e pensões por doença profissional ou por acidente de trabalho;</li>
+                              <li>Pensão de velhice, invalidez e sobrevivência do sistema previdencial ou de outros regimes obrigatórios;</li>
+                              <li>Prestações de pré-reforma, desde que os beneficiários exerçam atividade enquadrada num dos regimes do sistema previdencial;</li>
+                              <li>Rendimento social de inserção;</li>
+                              <li>Subsídio de apoio ao cuidador informal principal.</li>
+                          </ul>
+                          <p>A cessação ou suspensão do contrato de trabalho não prejudica o direito à atribuição das prestações. </p>
+
+                          <br />
+                          <h6>Como requerer</h6>
+                          <ul>
+                              <li>Através do Serviço Segurança Social Direta e/ou nos serviços de atendimento da Segurança Social e Lojas do Cidadão;</li>
+                              <li>Através do <a href="docs/pp/RP_5051_DGSS.pdf" target="_blank">formulário</a>, acompanhado dos documentos nele indicados.</li>
+                          </ul>
+                          <br />
+                          <h6>Prazo para requerer</h6>
+                          <p>No prazo de 6 meses a contar da data do facto que determina a proteção. Após este prazo e caso esteja a decorrer o período de concessão, este é reduzido pelo tempo correspondente a este atraso.</p>
+
+                          <br>
+                          <p><a href="https://www.seg-social.pt/subsidio-por-riscos-especificos" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="position-absolute bottom-0 start-50 translate-middle-x pb-3">
+          <button type="button" class="btn btn-primary" onclick="history.back();">Voltar</button>
+      </div>
+  </section>
+  <!--FIM Menu Accordion-->
+
+  <!--INÍCIO do FOOTER-->
+  <footer class="spacer-y-3" style="background-color: rgb(0,70,148);">
+      <div class="container">
+          <div class="row">
+              <div class="col-6 col-md-3 mb-3 mb-md-0">
+                  <h5 class="text-white">Recursos Sociais no Apoio a Vítimas de Crime</h5>
+                  <ul class="list-unstyled">
+                      <li class="py-0 py-md-1"><a href="/pp" class="text-white">Prestações Pecuniárias</a></li>
+                      <li class="py-0 py-md-1"><a href="/asp" class="text-white">Apoios Sociais e Programas</a></li>
+                      <li class="py-0 py-md-1"><a href="/cu" class="text-white">Contactos Úteis</a></li>
+                  </ul>
+              </div>
+              <div class="col-12 col-md-3 mb-3 mb-md-0">
+                  <h5 class="text-white">Ajuda &amp; Suporte</h5>
+                  <p class="text-white"></p>
+                  <p class="text-white">UATI: 21 358 79 13 / 19</p>
+                  <p class="text-white">carlosferreira@apav.pt</p>
+                  <p class="text-white">deolindasantos@apav.pt</p>
+              </div>
+
+              <div class="col-12 col-md-3">
+                  <h5 class="text-white">As nossas redes sociais</h5>
+                  <p class="text-white"></p>
+                  <ul class="list-social-links">
+                      <li class="text-white">
+                          <a href="https://www.facebook.com/APAV.Portugal" target="_blank">
+                              <i class="socicon-facebook"></i>
+                          </a>
+                      </li>
+                      <li class="text-white">
+                          <a href="https://www.instagram.com/apav_online/" target="_blank">
+                              <i class="socicon-instagram"></i>
+                          </a>
+                      </li>
+                      <li class="text-white">
+                          <a href="https://twitter.com/APAV_Online" target="_blank">
+                              <i class="socicon-twitter"></i>
+                          </a>
+                      </li>
+                      <li class="text-white">
+                          <a href="https://www.linkedin.com/company/10866232" target="_blank">
+                              <i class="socicon-linkedin"></i>
+                          </a>
+                      </li>
+                      <li class="text-white">
+                          <a href="https://www.youtube.com/APAVportugal" target="_blank">
+                              <i class="socicon-youtube"></i>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-12 col-md-3">
+                  <p class="text-white"></p>
+                  <p class="text-white"></p>
+                  <p class="text-white"></p>
+                  <a class="navbar-brand" href="/home">
+                      <img alt="" style="max-width: 80%; height: auto;" src="img/design/LogoB.png">
+                  </a>
+              </div>
+          </div>
+          <div class="row mt-3 mt-md-4">
+              <div class="col">
+                  <span class="text-small text-white opacity-50">&#xA9; 2023 | Todos os direitos reservados</span>
+              </div>
+          </div>
+          <!--<div class="row mt-3">
+        <div class="col">
+          <ul class="list-unstyled d-flex list-pipe-separator">
+            <li><a href="#" class="text-white text-small">Política de Privacidade</a></li>
+            <li><a href="#" class="text-white text-small">Termos e Condições</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>-->
+      </div>
+  </footer>
+  <!--FIM FOOTER-->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/prism.js"></script>
+  <script type="text/javascript" src="js/smooth-scroll.polyfills.js"></script>
+  <script type="text/javascript" src="js/scrollMonitor.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/clipboard.js"></script>
+  <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+  <script type="text/javascript" src="js/flickity.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/jquery.smartWizard.min.js"></script>
+  <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
+  <script type="text/javascript" src="js/zoom.min.js"></script>
+  <script type="text/javascript" src="js/theme.js"></script>
+</body>
+
+</html>

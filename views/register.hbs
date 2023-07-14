@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{> header }} <!-- Inclui o cabeçalho -->
+  <link rel="stylesheet" type="text/css" href="/css/theme.css"> <!-- Importa o arquivo CSS -->
+</head>
+<body>
+  {{> navbar }} <!-- Inclui a barra de navegação -->
+  <div class="container form-container">
+    <div class="text">Registration</div>
+    {{#if msg}}
+    <p class="{{msg_type}}">{{msg}}</p>
+    {{/if}}
+    <form action="/auth/register" method="post">
+      <div class="form-group">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" name="name" id="name" class="form-input" />
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" id="email" class="form-input" />
+      </div>
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" id="password" class="form-input" />
+        <div id="password-strength" class="password-strength"></div>
+        <ul id="password-criteria" class="password-criteria"></ul>
+      </div>
+      <div class="form-group">
+        <label for="confirm_password" class="form-label">Confirm Password</label>
+        <input type="password" name="confirm_password" id="confirm_password" class="form-input" />
+      </div>
+      <!-- Adicione o campo do reCAPTCHA v3 -->
+      <input type="hidden" name="recaptcha" id="recaptcha" value="" />
+      <!-- Fim do campo do reCAPTCHA v3 -->
+      <div class="btn">
+        <button type="submit">Register</button>
+      </div>
+      <div class="signup-link">
+        Already a member? <a href="/">Login now</a>
+      </div>
+    </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Adicione o script do reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeNBN8mAAAAAE8Ga2waf9-sbTJTZXV6bEYWXF_p"></script>
+
+  <script>
+    // Função para verificar a força da senha
+    function checkPasswordStrength() {
+      const password = document.getElementById('password').value;
+      const regexList = [
+        { regex: /[a-z]/, desc: 'At least one lowercase letter' },
+        { regex: /[A-Z]/, desc: 'At least one uppercase letter' },
+        { regex: /[0-9]/, desc: 'At least one number' },
+        { regex: /[!@#$%^&*]/, desc: 'At least one special character' },
+        { regex: /.{8,}/, desc: 'At least 8 characters long' }
+      ];
+
+      let strength = 0;
+
+      for (const item of regexList) {
+        if (item.regex.test(password)) {
+          strength++;
+        }
+      }
+
+      const strengthText = ['Very Weak', 'Weak', 'Reasonable', 'Strong', 'Very Strong'];
+      const strengthClass = ['very-weak', 'weak', 'reasonable', 'strong', 'very-strong'];
+
+      const passwordStrength = document.getElementById('password-strength');
+      const passwordCriteria = document.getElementById('password-criteria');
+      passwordStrength.innerText = `Password Strength: ${strengthText[strength]}`;
+      passwordStrength.className = `password-strength ${strengthClass[strength]}`;
+
+      passwordCriteria.innerHTML = '';
+      for (const item of regexList) {
+        const li = document.createElement('li');
+        li.innerText = item.desc;
+        if (!item.regex.test(password)) {
+          li.classList.add('invalid');
+        }
+        passwordCriteria.appendChild(li);
+      }
+
+      if (strength === regexList.length) {
+        passwordCriteria.style.display = 'none';
+      } else {
+        passwordCriteria.style.display = 'block';
+      }
+    }
+
+    // Execute a verificação da força da senha ao digitar
+    document.getElementById('password').addEventListener('keyup', checkPasswordStrength);
+
+    // Função para enviar o token do reCAPTCHA v3 ao servidor
+    function sendRecaptchaToken(token) {
+      const recaptchaInput = document.getElementById('recaptcha');
+      if (recaptchaInput) {
+        recaptchaInput.value = token;
+        // Envie o formulário após adicionar o token do reCAPTCHA
+        document.querySelector('form').submit();
+      }
+    }
+
+    // Execute o reCAPTCHA v3 e envie o token quando o formulário for enviado
+    document.querySelector('form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      grecaptcha.ready(() => {
+        // Execute o reCAPTCHA v3 e obtenha o token
+        grecaptcha.execute('6LeNBN8mAAAAAE8Ga2waf9-sbTJTZXV6bEYWXF_p', { action: 'submit' }).then((token) => {
+          // Envie o token para o servidor
+          sendRecaptchaToken(token);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

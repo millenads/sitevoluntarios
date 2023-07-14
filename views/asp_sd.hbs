@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+   {{> header   }}
+  <body>
+     {{> navbar   }}
+
+  <style>
+    /* Custom style para o Accordion*/
+    .accordion-button::after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+      transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+
+    .accordion-button {
+      color: rgb(0, 70, 148);
+      font-weight: bold;
+    }
+
+    /* END of Custom style para o Accordion*/
+  </style>
+
+
+  <!--Menu Principal-->
+  <nav class="navbar navbar-expand-lg py-0 sticky-top" style="background-color: rgb(0,70,148);">
+    <div class="container">
+      <div class="collapse navbar-collapse navMenu">
+        <ul class="navbar-nav nav-tabs border-0">
+          <li class="dropdown">
+            <a class="nav-link h5 dropdown-toggle" style="color:#ffffff" href="pp" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pages-dropdown">Prestações
+              Pecuniárias</a>
+            <div class="dropdown-menu dropdown-menu-wide p-0 o-hidden" aria-labelledby="pages-dropdown">
+              <div class="list-group list-group-flush">
+                <a href="/pp_mat_pat"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Maternidade e Paternidade</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_ado"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Adoção</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_ecj"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Encargos com Crienças e Jovens</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_did"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Doença, Invalidez e Dependência</span>
+
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_dcs"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+
+                    <div>
+                      <span class="h6 d-block mb-0">Desemprego e Carência Socioeconómica</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_rv"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Reforma e Velhice</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_mrt"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Morte</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_cp"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Complementos de Pensões</span>
+
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+              </div>
+
+            </div>
+          </li>
+
+          <li class="dropdown">
+            <a class="nav-link h5 dropdown-toggle" style="color:#ffffff" href="/asp" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pages-dropdown">Apoios Sociais e
+              Programas</a>
+            <div class="dropdown-menu dropdown-menu-wide p-0 o-hidden" aria-labelledby="pages-dropdown">
+              <div class="list-group list-group-flush">
+                <a href="/asp_cj"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Crianças e Jovens</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_ido"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Idosos</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_sa"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Sem Abrigo</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_vvd"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Vítimas de Violência Doméstica</span>
+
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_fc"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+
+                    <div>
+                      <span class="h6 d-block mb-0">Família / Comunidade</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_sd" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Saúde</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+              </div>
+
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link h5" style="color:#ffffff" href="/cu">Contactos Úteis</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--FIM Menu Principal-->
+
+  <!--INÍCIO das Imagens em Carrocel-->
+  <section class="controls-inside p-0 controls-light bg-dark"
+    data-flickity="{ &quot;cellAlign&quot;: &quot;left&quot;, &quot;contain&quot;: true, &quot;imagesLoaded&quot;: true, &quot;wrapAround&quot;: true }">
+    <div class="height-70 carousel-cell py-3 py-md-4 height-40 overlay-dark">
+      <img class="bg-image opacity-50" src="img/design/slider-bg.jpg" alt="Build beautiful, modular websites.">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="display-4 text-white">Recursos Sociais no Apoio a Vítimas de Crime</h1>
+            <a href="/pp" class="btn btn-primary btn-lg">Prestações Pecuniárias</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <div class="height-70 carousel-cell py-3 py-md-4 height-40 overlay-dark">
+      <img class="bg-image opacity-50" src="img/design/slider-bg_1.jpg" alt="Build beautiful, modular websites.">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="display-4 text-white">Recursos Sociais no Apoio a Vítimas de Crime</h1>
+            <a href="/asp" class="btn btn-primary btn-lg">Apoios Sociais e Programas</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="height-70 carousel-cell py-3 py-md-4 height-40 overlay-dark">
+      <img class="bg-image opacity-50" src="img/design/slider-bg_2.jpg" alt="Build beautiful, modular websites.">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="display-4 text-white">Recursos Sociais no Apoio a Vítimas de Crime</h1>
+            <a href="/cu" class="btn btn-primary btn-lg">Contactos Úteis</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!--FIM das Imagens em Carrocel-->
+
+  <section>
+      <div class="position-absolute bottom-0 start-50 translate-middle-x pb-3">
+          <h2>Saúde</h2><br>
+      </div>
+    
+  </section>
+
+  <!--INICIO Menu Accordion-->
+  <section class="pt-md-3 ">
+
+      <div class="m-4">
+          <div class="accordion" id="myAccordion">
+
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseOne">
+                          RNCCI - Rede Nacional de Cuidados Continuados Integrados
+                      </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <h6>Objetivos e Princípios</h6>
+                          <p>
+                              São objetivos da RNCCI a prestação de cuidados de saúde e de apoio social de forma continuada e
+                              integrada a pessoas que, independentemente da idade, se encontrem em situação de dependência, na
+                              sequência de episódio de doença aguda ou necessidade de prevenção de agravamentos de doença crónica.
+                          </p>
+                          <p>
+                              Os Cuidados Continuados Integrados estão centrados na recuperação global da pessoa, promovendo a sua
+                              reabilitação, autonomia e melhorando a sua funcionalidade, no âmbito da situação de dependência em que
+                              se encontra, com vista à sua reintegração sociofamiliar.
+                          </p>
+                          <p><strong>Os princípios base da Rede Geral da RNCCI:</strong></p>
+                          <ul>
+                              <li>Prestação individualizada e humanizada de cuidados; </li>
+                              <li>
+                                  Garantia de articulação e continuidade dos cuidados entre os diferentes serviços, setores e níveis
+                                  de atuação;
+                              </li>
+                              <li>Equidade no acesso e mobilidade entre tipologias e equipas da RNCCI; </li>
+                              <li>
+                                  Proximidade da prestação dos cuidados, através da potenciação de serviços integrados na comunidade;
+                              </li>
+                              <li>Multidisciplinaridade e interdisciplinaridade na prestação dos cuidados; </li>
+                              <li>
+                                  Avaliação integral das necessidades da pessoa em situação de dependência e definição periódica de
+                                  objetivos de funcionalidade e autonomia;
+                              </li>
+                              <li>Promoção, recuperação contínua ou manutenção da funcionalidade e da autonomia;</li>
+                              <li>
+                                  Participação do utente e seus familiares ou representante legal, na elaboração do plano individual
+                                  de intervenção e corresponsabilização na prestação de cuidados;
+                              </li>
+                              <li>Eficiência e qualidade na prestação dos cuidados.</li>
+                          </ul>
+                          <br>
+                          <p><strong>Os princípios base dos Cuidados Continuados Integrados de Saúde Mental da RNCCI:</strong></p>
+                          <ul>
+                              <li>
+                                  Desenvolvimento das capacidades pessoais e a promoção da vida independente e de um papel ativo na
+                                  comunidade, tendo em consideração as necessidades globais;
+                              </li>
+                              <li>Promoção de relações interpessoais significativas e das redes de suporte social informal;</li>
+                              <li>Envolvimento e participação dos familiares e de outros cuidadores;</li>
+                              <li>Integração das unidades em contextos comunitários inclusivos e não estigmatizantes;</li>
+                              <li>
+                                  Localização preferencial das unidades no âmbito territorial dos Serviços Locais de Saúde Mental, de
+                                  forma a facilitar a articulação e a continuidade de cuidados;
+                              </li>
+                              <li>Equidade no acesso e mobilidade entre os diferentes tipos de unidades e equipas;</li>
+                              <li>Eficiência e qualidade na prestação dos cuidados.</li>
+                          </ul>
+                          <br>
+                          <h6>Tipologias de cuidados continuados integrados</h6>
+                          <p>As respostas na Rede Geral da RNCCI contemplam as seguintes tipologias:</p>
+                          <ul>
+                              <li>Unidade de Convalescença (UC);</li>
+                              <li>Unidade de Média Duração e Reabilitação (UMDR);</li>
+                              <li>Unidade de Longa Duração e Manutenção (ULDM);</li>
+                              <li>Equipa de Cuidados Continuados Integrados – Domiciliários (ECCI).</li>
+                          </ul>
+                          <br>
+                          <p>
+                              As respostas nos Cuidados Continuados Integrados de Saúde Mental (CCISM) contemplam as seguintes
+                              tipologias:
+                          </p>
+                          <p><strong>Para Adultos:</strong></p>
+                          <ul>
+                              <li>Residências de treino de autonomia (RTA);</li>
+                              <li>Residências autónomas de saúde mental (RA);</li>
+                              <li>Residências de apoio moderado (RAMo);</li>
+                              <li>Residências de apoio máximo (RAMa);</li>
+                              <li>Unidades sócio ocupacionais (USO);</li>
+                              <li>Equipas de apoio domiciliário (EAD).</li>
+                          </ul>
+                          <p><strong>Para Infância e Adolescência:</strong></p>
+                          <ul>
+                              <li>Residências de treino de autonomia (RTA-A);</li>
+                              <li>Residências de apoio máximo (RAMa- IA);</li>
+                              <li>Unidades sócio ocupacionais (USO-IA);</li>
+                              <li>Equipas de apoio domiciliário (EAD-IA).</li>
+                          </ul>
+                          <p>
+                              <a href="docs/asp/N37_rede_nacional_cuidados_continuados_integrados_rncci.pdf" target="_blank"
+                                 class="btn btn-primary">Guia Prático da RNCCI (PDF)</a>
+                          </p>
+                          <br>
+                          <h6>Acesso</h6>
+                          <p><strong>Se estiver internado num Hospital do Serviço Nacional de Saúde (SNS)</strong></p>
+                          <p>Deve contactar o Serviço onde está internado ou a Equipa de Gestão de Altas (EGA) desse hospital.</p>
+                          <p>
+                              São os profissionais de saúde e de apoio social do serviço do hospital que referenciam os doentes para
+                              o ingresso na RNCCI.
+                          </p>
+                          <p>A EGA do Hospital onde o doente está internado, é a equipa que analisa a situação do doente.</p>
+                          <p>
+                              Se a EGA verificar que tem as condições necessárias para ser encaminhado para a RNCCI, envia uma
+                              proposta de admissão à Equipa Coordenadora Local (ECL) da área de residência do doente/família.
+                          </p>
+                          <p>
+                              A referenciação pode ser realizada logo no início do internamento e até quatro dias antes da data
+                              prevista da alta.
+                          </p>
+                          <br>
+                          <p><strong>Se estiver no domicilio, num Hospital Privado ou noutra Instituição</strong></p>
+                          <p>
+                              Deve contactar um elemento da equipa de saúde familiar (médico, enfermeiro e/ou assistente social) da
+                              Unidade de Saúde da área onde reside, que avaliará a situação, mediante os critérios definidos na RNCCI
+                              e enviará uma proposta de admissão à Equipa Coordenadora Local (ECL) da mesma área.
+                          </p>
+                          <br>
+                          <p><strong>Para os Cuidados Continuados Integrados de Saúde Mental (CCISM):</strong></p>
+                          <p>A referenciação é efetuada através dos seguintes serviços:</p>
+                          <ol>
+                              <li>
+                                  serviços locais de saúde mental (SLSM) e serviços regionais de saúde mental, quanto a utentes da
+                                  respetiva rede de programas e serviços;
+                              </li>
+                              <li>
+                                  Agrupamentos de centros de saúde, sempre que se refira a utentes sinalizados pela comunidade,
+                                  devendo estas propostas ser previamente validadas pelo respetivo SLSM;
+                              </li>
+                              <li>Unidades psiquiátricas de internamento do setor social convencionado.</li>
+                          </ol>
+                          <br>
+                          <h6>Comparticipação da Segurança Social nos Encargos com a prestação de cuidados de apoio social</h6>
+                          <p><strong>O que se comparticipa?</strong></p>
+                          <ul>
+                              <li>
+                                  Na RNCCI, o utente comparticipa os custos referentes à prestação de cuidados de apoio social nas
+                                  Unidades de Média Duração e Reabilitação e nas Unidades de Longa Duração e Manutenção;
+                              </li>
+                              <li>
+                                  O valor da comparticipação do utente depende do rendimento do agregado familiar, que é calculado
+                                  pela Equipa de Coordenação Local;
+                              </li>
+                              <li>
+                                  A parte comparticipada pela Segurança Social é transferida diretamente para a Entidade onde está
+                                  internado o doente;
+                              </li>
+                              <li>
+                                  O utente tem de assinar o Termo de Aceitação do Internamento (TA) onde se responsabiliza assegurar o
+                                  pagamento e cumprir as condições estipuladas. As demais despesas, que não sejam parte dos serviços e
+                                  cuidados acordados, são da exclusiva responsabilidade do utente, quando por si solicitadas;
+                              </li>
+                              <li>
+                                  O internamento numa Unidade de Convalescença e o apoio domiciliário da ECCI é gratuito para o
+                                  utente, sendo os custos assumidos pelo Serviço Nacional de Saúde, ou por outros Subsistemas de Saúde.
+                              </li>
+                          </ul>
+                          <br>
+                          <p><strong>Como se calcula o valor da comparticipação da Segurança Social?</strong></p>
+                          <p>
+                              Apenas podem ter acesso à Comparticipação da Segurança Social os utentes que, isoladamente ou em
+                              conjunto com os restantes elementos do seu agregado familiar, tenham um património mobiliário (depósitos
+                              bancários, ações, certificados de aforro ou outros ativos financeiros) de valor inferior a €115.303,20,
+                              no ano de 2023 (240 vezes o valor do Indexante de Apoios Sociais - €480,43 em 2023).
+                          </p>
+                          <p><a href="docs/asp/8000_condicao_recursos.pdf" target="_blank" class="btn btn-primary">Guia Prático Condição de Recursos (PDF)</a></p>
+                          <p><strong>Documento obrigatório para a integração na RNCCI:</strong></p>
+                          <p><a href="docs/asp/CCI_1.pdf" target="_blank" class="btn btn-primary">Declaração (PDF)</a></p>
+                          <br>
+                          <p>
+                              <a href="https://www.seg-social.pt/familia-e-comunidade" target="_blank" class="btn btn-primary">
+                                  Saber
+                                  mais
+                              </a>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <div class="position-absolute bottom-0 start-50 translate-middle-x pb-3">
+          <button type="button" class="btn btn-primary" onclick="history.back();">Voltar</button>
+      </div>
+  </section>
+  <!--FIM Menu Accordion-->
+
+  <!--INÍCIO do FOOTER-->
+  <footer class="spacer-y-3" style="background-color: rgb(0,70,148);">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-md-3 mb-3 mb-md-0">
+          <h5 class="text-white">Recursos Sociais no Apoio a Vítimas de Crime</h5>
+          <ul class="list-unstyled">
+            <li class="py-0 py-md-1"><a href="/pp" class="text-white">Prestações Pecuniárias</a></li>
+            <li class="py-0 py-md-1"><a href="/asp" class="text-white">Apoios Sociais e Programas</a></li>
+            <li class="py-0 py-md-1"><a href="/cu" class="text-white">Contactos Úteis</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3 mb-3 mb-md-0">
+          <h5 class="text-white">Ajuda &amp; Suporte</h5>
+          <p class="text-white"></p>
+          <p class="text-white">UATI: 21 358 79 13 / 19</p>
+          <p class="text-white">carlosferreira@apav.pt</p>
+          <p class="text-white">deolindasantos@apav.pt</p>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <h5 class="text-white">As nossas redes sociais</h5>
+          <p class="text-white"></p>
+          <ul class="list-social-links">
+            <li class="text-white"><a href="https://www.facebook.com/APAV.Portugal" target="_blank"><i
+                  class="socicon-facebook"></i></a></li>
+            <li class="text-white"><a href="https://www.instagram.com/apav_online/" target="_blank"><i
+                  class="socicon-instagram"></i></a></li>
+            <li class="text-white"><a href="https://twitter.com/APAV_Online" target="_blank"><i
+                  class="socicon-twitter"></i></a></li>
+            <li class="text-white"><a href="https://www.linkedin.com/company/10866232" target="_blank"><i
+                  class="socicon-linkedin"></i></a></li>
+            <li class="text-white"><a href="https://www.youtube.com/APAVportugal" target="_blank"><i
+                  class="socicon-youtube"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <p class="text-white"></p>
+          <p class="text-white"></p>
+          <p class="text-white"></p>
+          <a class="navbar-brand" href="/home">
+            <img alt="" style="max-width: 80%; height: auto;" src="img/design/LogoB.png">
+          </a>
+        </div>
+      </div>
+      <div class="row mt-3 mt-md-4">
+        <div class="col">
+          <span class="text-small text-white opacity-50">&#xA9; 2023 | Todos os direitos reservados</span>
+        </div>
+      </div>
+      <!--<div class="row mt-3">
+          <div class="col">
+            <ul class="list-unstyled d-flex list-pipe-separator">
+              <li><a href="#" class="text-white text-small">Política de Privacidade</a></li>
+              <li><a href="#" class="text-white text-small">Termos e Condições</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>-->
+  </footer>
+  <!--FIM FOOTER-->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/prism.js"></script>
+  <script type="text/javascript" src="js/smooth-scroll.polyfills.js"></script>
+  <script type="text/javascript" src="js/scrollMonitor.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/clipboard.js"></script>
+  <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+  <script type="text/javascript" src="js/flickity.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/jquery.smartWizard.min.js"></script>
+  <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
+  <script type="text/javascript" src="js/zoom.min.js"></script>
+  <script type="text/javascript" src="js/theme.js"></script>
+</body>
+
+</html>

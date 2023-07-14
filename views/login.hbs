@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{> header }}
+  <link rel="stylesheet" type="text/css" href="/css/theme.css">
+</head>
+<body>
+  {{> navbar }}
+    
+  <div class="container form-container">
+    <div class="text">User Login</div>
+    {{#if msg}}
+    <p class="{{msg_type}}">{{msg}}</p>
+    {{/if}}
+    <form action="/auth/login" method="post">
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <div class="input-group">
+          <input type="email" name="email" id="email" class="form-input" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+          <input type="password" name="password" id="password" class="form-input" />
+        </div>
+      </div>
+      <!-- Adicione o campo do reCAPTCHA v3 -->
+      <input type="hidden" name="recaptcha" id="recaptcha" value="" />
+      <!-- Fim do campo do reCAPTCHA v3 -->
+      <div class="form-group">
+        <div class="forgot-pass">
+          <a href="#">Forgot Password?</a>
+        </div>
+      </div>
+      <div class="btn">
+        <button type="submit" id="login-btn">Login</button>
+      </div>
+      <div class="signup-link">
+        Not a member? <a href="/register">Signup now</a>
+      </div>
+    </form>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Adicione o script do reCAPTCHA v3 -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LeNBN8mAAAAAE8Ga2waf9-sbTJTZXV6bEYWXF_p"></script>
+
+<script>
+  // Função para enviar o token do reCAPTCHA v3 ao servidor
+  function sendRecaptchaToken(token) {
+    const recaptchaInput = document.getElementById('recaptcha');
+    if (recaptchaInput) {
+      recaptchaInput.value = token;
+      // Envie o formulário após adicionar o token do reCAPTCHA
+      document.querySelector('form').submit();
+    }
+  }
+
+  // Execute o reCAPTCHA v3 e envie o token quando o botão de login for clicado
+  const loginBtn = document.getElementById('login-btn');
+  if (loginBtn) {
+    loginBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      grecaptcha.ready(() => {
+        // Execute o reCAPTCHA v3 e obtenha o token
+        grecaptcha.execute('6LeNBN8mAAAAAE8Ga2waf9-sbTJTZXV6bEYWXF_p', { action: 'submit' }).then((token) => {
+          // Envie o token para o servidor
+          sendRecaptchaToken(token);
+        });
+      });
+    });
+  }
+</script>
+</body>
+</html>

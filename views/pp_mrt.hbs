@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+   {{> header   }}
+  <body>
+     {{> navbar   }}
+ 
+  <style>
+    /* Custom style para o Accordion*/
+    .accordion-button::after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+      transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+
+    .accordion-button {
+      color: rgb(0,70,148);
+      font-weight: bold;
+    }
+
+    /* END of Custom style para o Accordion*/
+  </style>
+
+
+  <!--Menu Principal-->
+  <nav class="navbar navbar-expand-lg py-0 sticky-top" style="background-color: rgb(0,70,148);">
+    <div class="container">
+      <div class="collapse navbar-collapse navMenu">
+        <ul class="navbar-nav nav-tabs border-0">
+          <li class="dropdown">
+            <a class="nav-link h5 dropdown-toggle" style="color:#ffffff" href="/pp" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pages-dropdown">Prestações
+              Pecuniárias</a>
+            <div class="dropdown-menu dropdown-menu-wide p-0 o-hidden" aria-labelledby="pages-dropdown">
+              <div class="list-group list-group-flush">
+                <a href="/pp_mat_pat"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Maternidade e Paternidade</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_ado"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Adoção</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_ecj"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Encargos com Crienças e Jovens</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_did"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Doença, Invalidez e Dependência</span>
+
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_dcs"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+
+                    <div>
+                      <span class="h6 d-block mb-0">Desemprego e Carência Socioeconómica</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_rv"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Reforma e Velhice</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_mrt"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Morte</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_cp"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Complementos de Pensões</span>
+
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+              </div>
+
+            </div>
+          </li>
+
+          <li class="dropdown">
+            <a class="nav-link h5 dropdown-toggle" style="color:#ffffff" href="/asp" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pages-dropdown">Apoios Sociais e
+              Programas</a>
+            <div class="dropdown-menu dropdown-menu-wide p-0 o-hidden" aria-labelledby="pages-dropdown">
+              <div class="list-group list-group-flush">
+                <a href="/asp_cj"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Crianças e Jovens</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_ido"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Idosos</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_sa"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Sem Abrigo</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_vvd"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Vítimas de Violência Doméstica</span>
+
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_fc"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+
+                    <div>
+                      <span class="h6 d-block mb-0">Família / Comunidade</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_sd"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+
+                    <div>
+                      <span class="h6 d-block mb-0">Saúde</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+              </div>
+
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link h5" style="color:#ffffff" href="/cu">Contactos Úteis</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--FIM Menu Principal-->
+
+  <!--INÍCIO das Imagens em Carrocel-->
+  <section class="controls-inside p-0 controls-light bg-dark"
+    data-flickity="{ &quot;cellAlign&quot;: &quot;left&quot;, &quot;contain&quot;: true, &quot;imagesLoaded&quot;: true, &quot;wrapAround&quot;: true }">
+    <div class="height-70 carousel-cell py-3 py-md-4 height-40 overlay-dark">
+      <img class="bg-image opacity-50" src="img/design/slider-bg.jpg" alt="Build beautiful, modular websites.">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="display-4 text-white">Recursos Sociais no Apoio a Vítimas de Crime</h1>
+            <a href="/pp" class="btn btn-primary btn-lg">Prestações Pecuniárias</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="height-70 carousel-cell py-3 py-md-4 height-40 overlay-dark">
+      <img class="bg-image opacity-50" src="img/design/slider-bg_1.jpg" alt="Build beautiful, modular websites.">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="display-4 text-white">Recursos Sociais no Apoio a Vítimas de Crime</h1>
+            <a href="/asp" class="btn btn-primary btn-lg">Apoios Sociais e Programas</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="height-70 carousel-cell py-3 py-md-4 height-40 overlay-dark">
+      <img class="bg-image opacity-50" src="img/design/slider-bg_2.jpg" alt="Build beautiful, modular websites.">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="display-4 text-white">Recursos Sociais no Apoio a Vítimas de Crime</h1>
+            <a href="/cu" class="btn btn-primary btn-lg">Contactos Úteis</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!--FIM das Imagens em Carrocel-->
+
+  <section>
+      <div class="position-absolute bottom-0 start-50 translate-middle-x pb-3">
+          <h2>Morte</h2><br>
+      </div>
+    
+  </section>
+
+  <!--INICIO Menu Accordion-->
+  <section class="pt-md-3 ">
+      <div class="m-4">
+          <div class="accordion" id="myAccordion">
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseOne">
+                          Pensão de Orfandade
+                      </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>É uma prestação em dinheiro atribuída, mensalmente, aos órfãos com nacionalidade portuguesa e residentes no país, até atingirem a maioridade ou a emancipação.</p>
+                          <br>
+                          <h6>Condições de Atribuição</h6>
+                          <p>Cidadãos nacionais, residentes no país que:</p>
+                          <ul>
+                              <li>tenham idade inferior a 18 anos e não estejam emancipados; </li>
+                              <li>sejam órfãos de pessoas não abrangidas por qualquer regime de proteção social; </li>
+                              <li>satisfaçam uma das seguintes condições de recursos: </li>
+                              <ul>
+                                  <li>Rendimentos ilíquidos mensais iguais ou inferiores 192,17 € (corresponde a 40% do valor do indexante dos apoios sociais - IAS), desde que o rendimento do respetivo agregado familiar não seja superior a 720,65 € (1,5xIAS) ou</li>
+                                  <li>Rendimento do agregado familiar, por pessoa, igual ou inferior a 144,13 € (30% do IAS) e estar em situação de risco ou disfunção social.</li>
+                              </ul>
+                          </ul>
+                          <p><strong>Nota: </strong>Valor do IAS = 480,43 €</p>
+                          <p>Fazem parte do agregado familiar o órfão, parentes e afins em linha reta (avós, pais, padrasto, madrasta, filhos, netos) e em linha colateral até ao 3.º grau (irmãos, tios e sobrinhos), que vivam em economia familiar com o órfão.</p>
+                          <br>
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>Não pode acumular com prestações de idêntica natureza atribuídas por outros regimes de proteção social.</p>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>Através da apresentação de requerimento:</p>
+                          <ul>
+                              <li><a href="docs/pp/RP_5018.pdf" target="_blank"> Requerimento de Prestações por Morte - Pensão de Orfandade / Pensão de Viuvez</a> - Regime não contributivo, acompanhado dos documentos nele indicados;</li>
+                              <li>Nos serviços da Segurança Social;</li>
+                              <li>No prazo de 6 meses a contar do mês seguinte ao do falecimento;</li>
+                          </ul>
+                          <p>No caso de requerer após aquele prazo, a prestação será paga, apenas, a partir do mês seguinte ao da apresentação do requerimento.</p>
+                          <br />
+                          <h6>Prazo parar requerer</h6>
+                          <p>No prazo de 6 meses a contar do mês seguinte ao do falecimento.</p>
+                          <br /> <p><a href="https://www.seg-social.pt/pensao-de-orfandade1" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseTwo">
+                          Pensão de Viuvez
+                      </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>É uma prestação em dinheiro atribuída, mensalmente, aos órfãos com nacionalidade portuguesa e residentes no país, até atingirem a maioridade ou a emancipação.</p>
+                          <br>
+                          <h6>Condições de Atribuição</h6>
+                          <p>Cidadãos nacionais, residentes no país que:</p>
+                          <ul>
+                              <li>Tenham idade inferior a 18 anos e não estejam emancipados;</li>
+                              <li>Sejam órfãos de pessoas não abrangidas por qualquer regime de proteção social;</li>
+                              <li>Satisfaçam <strong>uma </strong> das seguintes <strong>condições de recursos: </strong></li>
+                              <ul>
+                                  <li>Rendimentos ilíquidos mensais iguais ou inferiores 192,17 € (corresponde a 40% do valor do indexante dos apoios sociais - IAS), desde que o rendimento do respetivo agregado familiar não seja superior a 720,65 € (1,5xIAS) ou </li>
+                                  <li>Rendimento do agregado familiar, por pessoa, igual ou inferior a 144,13 € (30% do IAS) e estar em situação de risco ou disfunção social.</li>
+                              </ul>
+                          </ul>
+                          <p><strong>Nota: </strong> Valor do IAS = 480,43 €</p>
+                          <br />
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p><strong>Não pode acumular</strong> com prestações de idêntica natureza atribuídas por outros regimes de proteção social.</p>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>Através da apresentação de requerimento:</p>
+                          <ul>
+                              <li><a href="docs/pp/RP_5018.pdf" target="_blank">Requerimento de Prestações por Morte - Pensão de Orfandade / Pensão de Viuvez </a>- Regime não contributivo, acompanhado dos documentos nele indicados;</li>
+                              <li>Nos serviços da Segurança Social;</li>
+                              <li>No prazo de 6 meses a contar do mês seguinte ao do falecimento;</li>
+                          </ul>
+                          <p>No caso de requerer após aquele prazo, a prestação será paga, apenas, a partir do mês seguinte ao da apresentação do requerimento.</p>
+                          <br />
+                          <h6>Prazo para requerer</h6>
+                          <p>No prazo de 6 meses a contar do mês seguinte ao do falecimento.</p>
+
+                          <br>
+                          <p><a href="https://www.seg-social.pt/pensao-de-viuvez1" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseThree">
+                          Pensão de Sobrevivência
+                      </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>Prestação em dinheiro, atribuída mensalmente, que se destina a compensar os familiares do beneficiário da perda de rendimentos de trabalho resultante da morte deste.</p>
+                          <br>
+                          <h6>Condições de Atribuiçãop</h6>
+                          <p>A pensão de sobrevivência é atribuída se, à data da morte, o <strong>beneficiário falecido</strong>tivesse preenchido o prazo de garantia de:</p>
+                          <ul>
+                              <li>36 meses de contribuições - Regime Geral de Segurança Social;</li>
+                              <li>72 meses de contribuições - Regime do Seguro Social Voluntário.</li>
+                          </ul>
+
+                          <p>Atribuída aos seguintes<strong>familiares</strong>:</p>
+                          <ul>
+                              <li><strong>Cônjuge</strong> - Se não houver filhos do casamento, ainda que nascituros, o cônjuge sobrevivo só tem direito ao subsídio se tiver casado com o beneficiário há pelo menos 1 ano antes da data do seu falecimento, exceto nos casos em que a morte resulte de acidente ou de doença contraída ou manifestada depois do casamento.</li>
+                              <li><strong>Ex-cônjuges</strong> - O cônjuge separado de pessoas e bens e o divorciado só têm direito à pensão se, à data da morte do beneficiário, dele recebessem pensão de alimentos, decretada ou homologada pelo tribunal, ou se esta não lhes tivesse sido atribuída por falta de capacidade económica do falecido, judicialmente reconhecida.</li>
+                              <li><strong>Pessoa em união de facto</strong> - Pessoa que à data do falecimento do beneficiário, vivia com este há mais de dois anos em condições análogas às dos cônjuges.</li>
+                              <li><strong>Descendentes</strong>, incluindo os nascituros e os adotados plenamente:</li>
+                              <ul>
+                                  <li>Até aos 18 anos;</li>
+                                  <li>Com idade igual ou superior a 18 anos, desde que não exerçam atividade determinante de enquadramento em qualquer regime de proteção social de inscrição obrigatória, com exceção da atividade prestada ao abrigo de contrato de trabalho em período de férias escolares e satisfaçam as seguintes condições:</li>
+                                  <li></li>
+                                  <ul>
+                                      <li>Dos 18 aos 25 anos – desde que estejam matriculados em curso de nível secundário, pós-secundário não superior ou superior;</li>
+                                      <li>Até aos 27 anos, se estiverem matriculados em pós-graduações, ciclos de estudos de mestrado ou doutoramento ou a realizar estágio indispensável à obtenção do respetivo grau;</li>
+                                      <li>Sem limite de idade, tratando-se de deficientes, desde que, nessa qualidade, sejam destinatários de prestações familiares ou da prestação social para a inclusão.</li>
+                                  </ul>
+                              </ul>
+                          </ul>
+                          <br />
+                          <h6>Acumulação com outros benefícios</h6>
+                          <p>A pensão <strong>pode acumular</strong> com:</p>
+                          <ul>
+                              <li>Pensões concedidas no âmbito dos regimes contributivos do sistema previdencial da Segurança Social ou de outros regimes de proteção social, designadamente estrangeiros;</li>
+                              <li>Pensões de invalidez ou de velhice do regime não contributivo e com pensões de invalidez, velhice ou de sobrevivência dos regimes equiparados ao não contributivo, até ao montante mínimo garantido às pensões de invalidez e de velhice do regime geral de Segurança Social. Se este montante for excedido a redução é efetuada na pensão atribuída pelo regime não contributivo;</li>
+                              <li>No caso de haver direito a pensão por morte de beneficiário do regime geral de Segurança Social, nos termos do regime jurídico de acidentes de trabalho e doenças profissionais, apenas será concedida a pensão de sobrevivência do regime geral na parte que exceda o valor da pensão por risco profissional;</li>
+                              <li>Subsídio de apoio ao cuidador informal principal.</li>
+                          </ul>
+                          <p><strong>Não pode acumular</strong> com:</p>
+                          <ul>
+                              <li>As pensões atribuídas a descendentes e ascendentes de beneficiários não são acumuláveis com pensões que lhe tenham sido concedidas por direito próprio.</li>
+                          </ul>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>Através da apresentação do <a href="docs/pp/RP_5077.pdf" target="_blank">Requerimento de Prestações por Morte, Mod.RP5075-DGSS </a>, nos serviços da Segurança Social.</p>
+                          <br />
+                          <h6>Prazo para requerer</h6>
+                          <p>No prazo de 6 meses a contar da data da morte ou do desaparecimento, no caso de presunção de morte. Se requerer após este prazo só tem direito à pensão a partir do mês seguinte ao da entrega do requerimento.</p>
+                          <br>
+                          <p><a href="https://www.seg-social.pt/pensao-de-sobrevivencia" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#collapseFour">
+                          Subsídio por Morte
+                      </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body">
+                          <p>Prestação em dinheiro, paga de uma só vez aos familiares do beneficiário, que se destina a compensar o acréscimo de encargos decorrentes da morte deste, com o objetivo de facilitar a reorganização da vida familiar.</p>
+                          <br>
+                          <h6>Condições de Atribuição</h6>
+                          <p>O subsídio por morte é atribuído aos familiares do <strong>beneficiário </strong>falecido:</p>
+                          <ul>
+                              <li>Sem exigência de preenchimento de prazo de garantia - Regime Geral de Segurança Social;</li>
+                              <li>Com prazo de garantia de 36 meses de contribuições - Regime do Seguro Social Voluntário.</li>
+                          </ul>
+                          <p>Atribuído aos seguintes <strong>familiares</strong>:</p>
+                          <ul>
+                              <li><strong>Cônjuge</strong> - Se não houver filhos do casamento, ainda que nascituros, o cônjuge sobrevivo só tem direito ao subsídio se tiver casado com o beneficiário há pelo menos 1 ano antes da data do seu falecimento, exceto nos casos em que a morte resulte de acidente ou de doença contraída ou manifestada depois do casamento.</li>
+                              <li><strong>Ex-cônjuges</strong> - O cônjuge separado de pessoas e bens e o divorciado só têm direito ao subsídio se, à data da morte do beneficiário, dele recebessem pensão de alimentos, decretada ou homologada pelo tribunal, ou se esta não lhes tivesse sido atribuída por falta de capacidade económica do falecido judicialmente reconhecida.</li>
+                              <li><strong>Pessoa em união de facto</strong> - Pessoa que, à data do falecimento do beneficiário, vivia com este há mais de dois anos em condições análogas às dos cônjuges.</li>
+                              <li><strong>Descendentes</strong>incluindo os nascituros e os adotados plenamente:</li>
+                              <ul>
+                                  <li>Até aos 18 anos;</li>
+                                  <li>Com idade igual ou superior a 18 anos, desde que não exerçam atividade determinante de enquadramento em qualquer regime de proteção social de inscrição obrigatória, com exceção da atividade prestada ao abrigo de contrato de trabalho em período de férias escolares e satisfaçam as seguintes condições:</li>
+                                  <ul>
+                                      <li>Dos 18 aos 25 anos – desde que estejam matriculados em curso de nível secundário, pós-secundário não superior ou superior;</li>
+                                      <li>Até aos 27 anos, se estiverem matriculados em pós-graduações, ciclos de estudos de mestrado ou doutoramento ou a realizar estágio indispensável à obtenção do respetivo grau.</li>
+                                  </ul>
+                                  <li>Sem limite de idade, tratando-se de deficientes, desde que, nessa qualidade, sejam destinatários de prestações familiares ou da prestação social para a inclusão.</li>
+                              </ul>
+                          </ul>
+                          <p><strong>Consideram-se descendentes:</strong> os enteados em relação aos quais o beneficiário falecido estivesse obrigado a prestar alimentos.</p>
+                          <p>No caso de descendentes além do 1.º grau estes só têm direito à pensão se estiverem a cargo do beneficiário falecido à data da sua morte.</p>
+                          <br />
+                          <h6>Como requerer</h6>
+                          <p>Através da apresentação do <a href="docs/pp/RP_5075.pdf" target="_blank">Requerimento de prestações por morte</a>:</p>
+                          <ul>
+                              <li>Nos serviços da Segurança Social;</li>
+                              <li>No prazo de 180 dias a contar da data da morte ou do desaparecimento, no caso de presunção de morte;</li>
+                              <li>
+                                  Com os documentos nele indicados.
+                              </li>
+                          </ul>
+                          <br />
+                          <h6>Prazo para requerer</h6>
+                          <p>No prazo de 180 dias a contar da data da morte ou do desaparecimento, no caso de presunção de morte.</p>
+                          <br>
+                          <p><a href="https://www.seg-social.pt/subsidio-por-morte" target="_blank" class="btn btn-primary">Saber mais</a></p>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <div class="position-absolute bottom-0 start-50 translate-middle-x pb-3">
+          <button type="button" class="btn btn-primary" onclick="history.back();">Voltar</button>
+      </div>
+  </section>
+  <!--FIM Menu Accordion-->
+
+  <!--INÍCIO do FOOTER-->
+  <footer class="spacer-y-3" style="background-color: rgb(0,70,148);">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-md-3 mb-3 mb-md-0">
+          <h5 class="text-white">Recursos Sociais no Apoio a Vítimas de Crime</h5>
+          <ul class="list-unstyled">
+            <li class="py-0 py-md-1"><a href="/pp" class="text-white">Prestações Pecuniárias</a></li>
+            <li class="py-0 py-md-1"><a href="/asp" class="text-white">Apoios Sociais e Programas</a></li>
+            <li class="py-0 py-md-1"><a href="/cu" class="text-white">Contactos Úteis</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3 mb-3 mb-md-0">
+          <h5 class="text-white">Ajuda &amp; Suporte</h5>
+          <p class="text-white"></p>
+          <p class="text-white">UATI: 21 358 79 13 / 19</p>
+          <p class="text-white">carlosferreira@apav.pt</p>
+          <p class="text-white">deolindasantos@apav.pt</p>
+         
+        </div>
+
+        <div class="col-12 col-md-3">
+          <h5 class="text-white">As nossas redes sociais</h5>
+          <p class="text-white"></p>
+          <ul class="list-social-links">
+            <li class="text-white"><a href="https://www.facebook.com/APAV.Portugal" target="_blank"><i
+                  class="socicon-facebook"></i></a></li>
+            <li class="text-white"><a href="https://www.instagram.com/apav_online/" target="_blank"><i
+                  class="socicon-instagram"></i></a></li>
+            <li class="text-white"><a href="https://twitter.com/APAV_Online" target="_blank"><i
+                  class="socicon-twitter"></i></a></li>
+            <li class="text-white"><a href="https://www.linkedin.com/company/10866232" target="_blank"><i
+                  class="socicon-linkedin"></i></a></li>
+            <li class="text-white"><a href="https://www.youtube.com/APAVportugal" target="_blank"><i
+                  class="socicon-youtube"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <p class="text-white"></p>
+          <p class="text-white"></p>
+          <p class="text-white"></p>
+          <a class="navbar-brand" href="/home">
+            <img alt="" style="max-width: 80%; height: auto;" src="img/design/LogoB.png">
+          </a>
+        </div>
+      </div>
+      <div class="row mt-3 mt-md-4">
+          <div class="col">
+              <span class="text-small text-white opacity-50">&#xA9; 2023 | Todos os direitos reservados</span>
+          </div>
+      </div>
+      </div>
+      <!--<div class="row mt-3">
+          <div class="col">
+            <ul class="list-unstyled d-flex list-pipe-separator">
+              <li><a href="#" class="text-white text-small">Política de Privacidade</a></li>
+              <li><a href="#" class="text-white text-small">Termos e Condições</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>-->
+  </footer>
+  <!--FIM FOOTER-->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/prism.js"></script>
+  <script type="text/javascript" src="js/smooth-scroll.polyfills.js"></script>
+  <script type="text/javascript" src="js/scrollMonitor.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/clipboard.js"></script>
+  <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+  <script type="text/javascript" src="js/flickity.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/jquery.smartWizard.min.js"></script>
+  <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
+  <script type="text/javascript" src="js/zoom.min.js"></script>
+  <script type="text/javascript" src="js/theme.js"></script>
+</body>
+
+</html>

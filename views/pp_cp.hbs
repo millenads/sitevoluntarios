@@ -1,0 +1,455 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   {{> header   }}
+  <body>
+     {{> navbar   }}
+
+  <style>
+    /* Custom style para o Accordion*/
+    .accordion-button::after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+      transform: scale(.7) !important;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+
+    .accordion-button {
+      color: rgb(0,70,148);
+      font-weight: bold;
+    }
+
+    /* END of Custom style para o Accordion*/
+  </style>
+
+
+  <!--Menu Principal-->
+  <nav class="navbar navbar-expand-lg py-0 sticky-top" style="background-color: rgb(0,70,148);">
+    <div class="container">
+      <div class="collapse navbar-collapse navMenu">
+        <ul class="navbar-nav nav-tabs border-0">
+          <li class="dropdown">
+            <a class="nav-link h5 dropdown-toggle" style="color:#ffffff" href="/pp" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pages-dropdown">Prestações
+              Pecuniárias</a>
+            <div class="dropdown-menu dropdown-menu-wide p-0 o-hidden" aria-labelledby="pages-dropdown">
+              <div class="list-group list-group-flush">
+                <a href="/pp_mat_pat"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Maternidade e Paternidade</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_ado"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Adoção</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_ecj"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Encargos com Crienças e Jovens</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_did"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Doença, Invalidez e Dependência</span>
+
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_dcs"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+
+                    <div>
+                      <span class="h6 d-block mb-0">Desemprego e Carência Socioeconómica</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_rv"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Reforma e Velhice</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_mrt"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Morte</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/pp_cp"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Complementos de Pensões</span>
+
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+              </div>
+
+            </div>
+          </li>
+
+          <li class="dropdown">
+            <a class="nav-link h5 dropdown-toggle" style="color:#ffffff" href="/asp" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pages-dropdown">Apoios Sociais e
+              Programas</a>
+            <div class="dropdown-menu dropdown-menu-wide p-0 o-hidden" aria-labelledby="pages-dropdown">
+              <div class="list-group list-group-flush">
+                <a href="/asp_cj"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Crianças e Jovens</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_ido"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Idosos</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_sa"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Sem Abrigo</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_vvd"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <span class="h6 d-block mb-0">Vítimas de Violência Doméstica</span>
+
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_fc"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+
+                    <div>
+                      <span class="h6 d-block mb-0">Família / Comunidade</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+                <a href="/asp_sd"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+
+                    <div>
+                      <span class="h6 d-block mb-0">Saúde</span>
+                    </div>
+                  </div>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+              </div>
+
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link h5" style="color:#ffffff" href="/cu">Contactos Úteis</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--FIM Menu Principal-->
+
+  <!--INÍCIO das Imagens em Carrocel-->
+  <section class="controls-inside p-0 controls-light bg-dark"
+    data-flickity="{ &quot;cellAlign&quot;: &quot;left&quot;, &quot;contain&quot;: true, &quot;imagesLoaded&quot;: true, &quot;wrapAround&quot;: true }">
+    <div class="height-70 carousel-cell py-3 py-md-4 height-40 overlay-dark">
+      <img class="bg-image opacity-50" src="img/design/slider-bg.jpg" alt="Build beautiful, modular websites.">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="display-4 text-white">Recursos Sociais no Apoio a Vítimas de Crime</h1>
+            <a href="/pp" class="btn btn-primary btn-lg">Prestações Pecuniárias</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="height-70 carousel-cell py-3 py-md-4 height-40 overlay-dark">
+      <img class="bg-image opacity-50" src="img/design/slider-bg_1.jpg" alt="Build beautiful, modular websites.">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="display-4 text-white">Recursos Sociais no Apoio a Vítimas de Crime</h1>
+            <a href="/asp" class="btn btn-primary btn-lg">Apoios Sociais e Programas</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="height-70 carousel-cell py-3 py-md-4 height-40 overlay-dark">
+      <img class="bg-image opacity-50" src="img/design/slider-bg_2.jpg" alt="Build beautiful, modular websites.">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h1 class="display-4 text-white">Recursos Sociais no Apoio a Vítimas de Crime</h1>
+            <a href="/cu" class="btn btn-primary btn-lg">Contactos Úteis</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!--FIM das Imagens em Carrocel-->
+
+  <section>
+      <div class="position-absolute bottom-0 start-50 translate-middle-x pb-3">
+          <h2>Complemento de Pensões</h2><br>
+      </div>
+  
+  </section>
+
+  <!--INICIO Menu Accordion-->
+  <section class="pt-md-3 ">
+    <div class="m-4">
+      <div class="accordion" id="myAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne">Acréscimo Vitalício de Pensões</button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+            <div class="card-body">
+                <p>É um montante pago uma vez por ano aos antigos combatentes que pagaram contribuições à Segurança Social para que lhes fosse contado, para efeitos de pensões, o tempo de serviço militar bonificado. </p>
+                <br>
+                <h6>Condições de Atribuição</h6>
+                <p>Têm direito ao Acréscimo Vitalício de Pensão os antigos combatentes que:</p>
+                <ul>
+                    <li>Estejam a receber uma Pensão de Invalidez ou de Velhice do regime geral da Segurança Social;</li>
+                    <li>Seja certificado, a seu pedido, o tempo de serviço militar prestado em condições de dificuldade ou perigo, a comunicar pelo Ministério da Defesa Nacional por via eletrónica; </li>
+                    <li>Tenham pago contribuições à Segurança Social para que lhe fosse contado, para efeitos de pensões, o tempo de serviço militar bonificado (ou seja, o tempo de serviço militar que lhes foi contado a mais por o terem feito em condições de perigo e dificuldade). </li>
+                </ul>
+                <br />
+                <h6>Acumulação com outros benefícios</h6>
+                <p>A pensão <strong>pode acumular </strong>com:</p>
+                <ul>
+                    <li>Pensão de Velhice</li>
+                    <li>Pensão de Invalidez</li>
+                </ul>
+                <br />
+                <h6>Como requerer</h6>
+                <p>Através do preenchimento do <a href="docs/pp/RP_5079_DGSS.pdf" target="_blank">Requerimento de Complemento Especial/Acréscimo Vitalício de Pensão/Suplemento Especial de Pensão</a> (antigos combatentes)</p>
+                <p>Assim como, da entrega dos documentos necessários: <strong>Certificação do tempo de serviço militar em condições de dificuldade ou perigo, a comunicar pelo Ministério da Defesa Nacional por via eletrónica.</strong></p>
+                <ul>
+                    <li>A entregar nos serviços da Segurança Social, incluindo o Centro Nacional de Pensões.</li>
+                </ul>
+                <br>
+                <p><a href="docs/pp/7018_acrescimo_vitalicio_pensão.pdf" target="_blank" class="btn btn-primary">Guia Prático (pdf)</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo">Complemento Especial de Pensão</button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+              <div class="card-body">
+                  <p>O Suplemento Especial de Pensão (SEP) é uma prestação pecuniária a cargo do Estado, que se destina a compensar os antigos combatentes, titulares de pensão de invalidez, velhice, aposentação e reforma, do tempo de serviço militar prestado em condições especiais de dificuldade ou perigo.</p>
+                  <p>O valor do suplemento é atribuído em função do tempo de serviço militar bonificado (que tenha sido prestado em condições de dificuldade ou perigo), sendo pago anualmente no mês de outubro.</p>
+                  <br>
+                  <h6>Condições de Atribuição</h6>
+                  <p>Têm direito ao Suplemento Especial de Pensão os antigos combatentes que:</p>
+                  <ul>
+                      <li>Estejam a receber Pensão de Invalidez ou de Velhice do regime geral de Segurança Social;</li>
+                      <li>Estejam abrangidos por sistema de Segurança Social de Estados Membros da União Europeia e demais Estados Membros do Espaço Económico Europeu, bem como pela legislação Suíça, coordenados pelos Regulamentos Comunitários, ainda que não tenham sido beneficiários do sistema de Segurança Social nacional;</li>
+                      <li>Estejam abrangidos por sistemas de Segurança Social de Estados com os quais foram celebrados instrumentos internacionais que prevejam a totalização de períodos contributivos desde que tenham sido beneficiários do sistema de Segurança Social nacional;</li>
+                      <li>Tenha sido certificado, a seu pedido, o tempo de serviço militar em condições de dificuldade ou perigo pelo Ministério da Defesa Nacional.</li>
+                  </ul>
+                  <p><strong>Nota:</strong> Têm também direito a este Suplemento Especial de Pensão, os antigos combatentes subscritores da Caixa Geral de Aposentações ou beneficiários da Caixa de Previdência dos Advogados e Solicitadores, que lhes é concedido pelas referidas entidades pagadoras da pensão.</p>
+                  <br />
+                  <h6>Acumulação com outros benefícios</h6>
+                  <p>O complemento<strong> pode acumular</strong> com:</p>
+                  <ul>
+                      <li>Pensão de Velhice;</li>
+                      <li>Pensão de Invalidez;</li>
+                      <li>Pensão de Sobrevivência (apenas a viúva);</li>
+                  </ul>
+                  <p><strong>Ñão pode acumular</strong> com:</p>
+                  <ul>
+                      <li>Acréscimo Vitalício de Pensão dos antigos combatentes;</li>
+                      <li>Complemento Especial de Pensão.</li>
+                  </ul>
+                  <br />
+                  <h6>Cpmo requerer</h6>
+                  <p>Através do preenchimento do<a href="docs/pp/RP_5079_DGSS.pdf" target="_blank"> Requerimento Suplemento Especial de Pensão/Complemento Especial de Pensão/Acréscimo Vitalício de Pensão</a>, e da apresentação dos documentos necessários (certificação do tempo de serviço militar em condições de dificuldade ou perigo, a comunicar pelo Ministério da Defesa Nacional por via eletrónica).</p>
+                     <br>
+                  <p><a href="docs/pp/7017_complemento_especial_pensao.pdf" target="_blank" class="btn btn-primary">Guia Prático (pdf)</a></p>
+              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree">Complemento por Cônjuge a Cargo</button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+            <div class="card-body">
+                <p>É um apoio em dinheiro pago mensalmente aos pensionistas de velhice e invalidez do regime geral, com pensão iniciada antes de 01/01/1994, cujo cônjuge (marido ou mulher) tenha rendimentos iguais ou inferiores a 39,06€ por mês (em 2022).</p>
+                <br>
+                <h6>Condições de Atribuição</h6>
+                <p>O pensionista não receber uma pensão de valor superior a 600€, considerando-se para esse efeito a soma de todas as pensões recebidas com a mesma natureza. Considera-se pensões da mesma natureza a soma de todas as pensões recebidas por um mesmo titular, ou seja, pensões de direito próprio somam com pensões de direito próprio (invalidez, velhice, aposentação ou reforma, etc.) e pensões de direito derivado somam com pensões de direito derivado (pensão de sobrevivência, pensão de viuvez, orfandade, etc.).</p>
+                <br />    
+                <h6>Acumulação com outros benefícios</h6>
+                <p>O complemento <strong>pode acumular </strong>com:</p>
+                <ul>
+                    <li>Pensão de velhice;</li>
+                    <li>Pensão de invalidez;</li>
+                    <li>Prestação Social para a Inclusão.</li>
+                    </ul>
+                <br />
+                <h6></h6>
+                <p>Através do preenchimento do <a href="docs/pp/RP_5069_DGSS.pdf" target="_blank">Requerimento de Complemento por Cônjuge a Cargo</a>.</p>
+                    <br>
+                    <p><a href="docs/pp/N03_complemento_conjuge_cargo.pdf" target="_blank" class="btn btn-primary">Guia Prático (pdf)</a></p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="position-absolute bottom-0 start-50 translate-middle-x pb-3">
+        <button type="button" class="btn btn-primary" onclick="history.back();">Voltar</button>
+    </div>
+
+  </section>
+  <!--FIM Menu Accordion-->
+
+  <!--INÍCIO do FOOTER-->
+  <footer class="spacer-y-3" style="background-color: rgb(0,70,148);">
+      <div class="container">
+          <div class="row">
+              <div class="col-6 col-md-3 mb-3 mb-md-0">
+                  <h5 class="text-white">Recursos Sociais no Apoio a Vítimas de Crime</h5>
+                  <ul class="list-unstyled">
+                      <li class="py-0 py-md-1"><a href="/pp" class="text-white">Prestações Pecuniárias</a></li>
+                      <li class="py-0 py-md-1"><a href="/asp" class="text-white">Apoios Sociais e Programas</a></li>
+                      <li class="py-0 py-md-1"><a href="/cu" class="text-white">Contactos Úteis</a></li>
+                  </ul>
+              </div>
+              <div class="col-12 col-md-3 mb-3 mb-md-0">
+                  <h5 class="text-white">Ajuda &amp; Suporte</h5>
+                  <p class="text-white"></p>
+                  <p class="text-white">UATI: 21 358 79 13 / 19</p>
+                  <p class="text-white">carlosferreira@apav.pt</p>
+                  <p class="text-white">deolindasantos@apav.pt</p>
+                  
+              </div>
+
+              <div class="col-12 col-md-3">
+                  <h5 class="text-white">As nossas redes sociais</h5>
+                  <p class="text-white"></p>
+                  <ul class="list-social-links">
+                      <li class="text-white">
+                          <a href="https://www.facebook.com/APAV.Portugal" target="_blank">
+                              <i class="socicon-facebook"></i>
+                          </a>
+                      </li>
+                      <li class="text-white">
+                          <a href="https://www.instagram.com/apav_online/" target="_blank">
+                              <i class="socicon-instagram"></i>
+                          </a>
+                      </li>
+                      <li class="text-white">
+                          <a href="https://twitter.com/APAV_Online" target="_blank">
+                              <i class="socicon-twitter"></i>
+                          </a>
+                      </li>
+                      <li class="text-white">
+                          <a href="https://www.linkedin.com/company/10866232" target="_blank">
+                              <i class="socicon-linkedin"></i>
+                          </a>
+                      </li>
+                      <li class="text-white">
+                          <a href="https://www.youtube.com/APAVportugal" target="_blank">
+                              <i class="socicon-youtube"></i>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-12 col-md-3">
+                  <p class="text-white"></p>
+                  <p class="text-white"></p>
+                  <p class="text-white"></p>
+                  <a class="navbar-brand" href="/home">
+                      <img alt="" style="max-width: 80%; height: auto;" src="img/design/LogoB.png">
+                  </a>
+              </div>
+          </div>
+          <div class="row mt-3 mt-md-4">
+              <div class="col">
+                  <span class="text-small text-white opacity-50">&#xA9; 2023 | Todos os direitos reservados</span>
+              </div>
+          </div>
+      </div>
+      <!--<div class="row mt-3">
+          <div class="col">
+            <ul class="list-unstyled d-flex list-pipe-separator">
+              <li><a href="#" class="text-white text-small">Política de Privacidade</a></li>
+              <li><a href="#" class="text-white text-small">Termos e Condições</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>-->
+  </footer>
+  <!--FIM FOOTER-->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/prism.js"></script>
+  <script type="text/javascript" src="js/smooth-scroll.polyfills.js"></script>
+  <script type="text/javascript" src="js/scrollMonitor.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/clipboard.js"></script>
+  <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+  <script type="text/javascript" src="js/flickity.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/jquery.smartWizard.min.js"></script>
+  <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
+  <script type="text/javascript" src="js/zoom.min.js"></script>
+  <script type="text/javascript" src="js/theme.js"></script>
+</body>
+
+</html>
